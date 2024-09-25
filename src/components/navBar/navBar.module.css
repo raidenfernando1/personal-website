@@ -1,0 +1,24 @@
+.navWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-inline: 15%;
+}
+
+.navContents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 20px;
+}
+
+.navContents ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navContents a {
+  text-decoration: none;
+}
