@@ -1,21 +1,23 @@
 import style from "./navBar.module.css";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   const navLinks = [
     { title: "HOME", route: "/" },
+    { title: "PROJECTS", route: "/skills" },
     { title: "SKILLS", route: "/skills" },
-    { title: "CONTACT ME", route: "/contact" },
+    { title: "CONTACTS", route: "/contact" },
   ];
   return (
     <div className={style.navWrapper}>
       <div className={style.navContents}>
-        <a href="/">RAIDEN FERNANDO</a>
+        <Link to="/">RAIDEN FERNANDO</Link>
         <nav>
           <ul>
             {navLinks.map((nav) => (
-              <a href={nav.route} key={nav.route}>
-                {nav.title}
-              </a>
+              <li key={nav.route}>
+                <Link to={nav.route}>{nav.title}</Link>
+              </li>
             ))}
           </ul>
         </nav>
