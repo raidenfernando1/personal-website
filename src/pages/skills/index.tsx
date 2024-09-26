@@ -1,7 +1,15 @@
+import style from "./skills.module.css";
+import SkillSection from "../../components/skillSection";
+
 const SkillPage = () => {
   return (
     <>
-      <h1>test</h1>
+      <div className={style.skillsLayout}>
+        <h1>Technical Skills</h1>
+        <div className={style.skillsContainer}>
+          <SkillSection></SkillSection>
+        </div>
+      </div>
     </>
   );
 };

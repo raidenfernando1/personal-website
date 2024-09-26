@@ -1,0 +1,19 @@
+.skillsLayout {
+  padding-top: 100px;
+}
+
+.skillContents {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.skillContents ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}

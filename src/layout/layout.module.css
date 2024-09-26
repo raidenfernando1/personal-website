@@ -3,3 +3,7 @@
   height: 100vh;
   box-shadow: inset 0px 0px 10vw white;
 }
+
+.pageLayout main {
+  height: 100%;
+}

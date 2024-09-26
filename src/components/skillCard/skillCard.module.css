@@ -1,0 +1,21 @@
+.skillCard {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+  gap: 80px;
+  padding: 15px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.skillCard {
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.leftContainer a {
+  text-decoration: none;
+}
