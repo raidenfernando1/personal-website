@@ -9,14 +9,19 @@ const homePage = () => {
             <h1>Raiden Fernando</h1>
             <p>
               Welcome to my personal website. Here, you will find a
-              comprehensive overview of my projects and skills. I invite you to
-              explore my work and feel free to reach out with any inquiries or
-              for further information. Your interest is greatly appreciated.
+              comprehensive overview of my skills and ways to get in touch with
+              me. I invite you to explore and feel free to reach out with any
+              inquiries or for further information. Your interest is greatly
+              appreciated.
             </p>
+          </div>
+          <div className={style.contactBtns}>
+            <button>Resume / CV</button>
+            <button>Get in touch</button>
           </div>
         </div>
         <div className={style.rightContainer}>
-          <div className={style.imgPlaceholder}></div>
+          <img src="src/assets/me.png" alt="me" />
         </div>
       </div>
     </>

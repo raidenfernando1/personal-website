@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const NavigationBar = () => {
   const navLinks = [
     { title: "HOME", route: "/" },
-    { title: "PROJECTS", route: "/skills" },
     { title: "SKILLS", route: "/skills" },
     { title: "CONTACTS", route: "/contact" },
   ];
