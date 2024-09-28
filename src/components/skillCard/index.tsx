@@ -1,4 +1,5 @@
 import style from "./skillCard.module.css";
+import { skills } from "../../data/skills/skills";
 
 type SkillCardProps = {
   name: string;

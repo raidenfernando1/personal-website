@@ -1,23 +1,23 @@
 import SkillCard from "../skillCard";
 import style from "./skillSection.module.css";
-import { programmingLanguages } from "../../data/skills/skills";
+import { skillsList } from "../../data/skills/skills";
 
 const SkillSection = () => {
   return (
-    <>
-      <div className={style.skillContents}>
-        {programmingLanguages.map((language) => (
-          <>
-            <p>Programming Languages</p>
-            <ul>
-              <li key={language.name}>
-                <SkillCard name={language.name} icon={language.icon} />
+    <div className={style.skillContents}>
+      {skillsList.map((language, index) => (
+        <div className={style.section} key={index}>
+          <p>{language.title}</p>
+          <ul>
+            {language.skills.map((skill) => (
+              <li key={skill.name}>
+                <SkillCard name={skill.name} icon={skill.icon} />
               </li>
-            </ul>
-          </>
-        ))}
-      </div>
-    </>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   );
 };
 
