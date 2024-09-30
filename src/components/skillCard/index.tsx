@@ -11,7 +11,7 @@ const SkillCard = ({ name, icon }: SkillCardProps) => {
       <button
         className={style.skillCard}
         style={{
-          backgroundImage: `url(${`src/assets/Skills/${icon}`})`,
+          backgroundImage: `url(${`../public/skills/${icon}`})`,
         }}
       >
         {name}

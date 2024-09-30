@@ -21,7 +21,7 @@ const homePage = () => {
           </div>
         </div>
         <div className={style.rightContainer}>
-          <img src="src/assets/me.png" alt="me" />
+          <img src="../public/me.png" alt="me" />
         </div>
       </div>
     </>
