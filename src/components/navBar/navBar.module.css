@@ -8,8 +8,7 @@
 }
 
 .navWrapper.scrolled {
-  box-shadow: inset 0px 0px 20px 5px white;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 
 .navContents {

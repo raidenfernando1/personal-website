@@ -13,7 +13,9 @@ const SkillCard = ({ name, icon }: SkillCardProps) => {
         style={{
           backgroundImage: `url(${`src/assets/Skills/${icon}`})`,
         }}
-      ></button>
+      >
+        {name}
+      </button>
     </>
   );
 };
