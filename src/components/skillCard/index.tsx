@@ -1,5 +1,4 @@
 import style from "./skillCard.module.css";
-import { skills } from "../../data/skills/skills";
 
 type SkillCardProps = {
   name: string;
@@ -12,11 +11,9 @@ const SkillCard = ({ name, icon }: SkillCardProps) => {
       <button
         className={style.skillCard}
         style={{
-          backgroundImage: `url(${`src/assets/Skill/${icon}`})`,
+          backgroundImage: `url(${`src/assets/Skills/${icon}`})`,
         }}
-      >
-        {name}
-      </button>
+      ></button>
     </>
   );
 };

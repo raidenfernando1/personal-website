@@ -2,53 +2,43 @@ export const skillsList = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "JavaScript", icon: "javascript.png" },
-      { name: "TypeScript", icon: "javascript.png" },
-      { name: "Python", icon: "javascript.png" },
-      { name: "Java", icon: "javascript.png" },
+      { name: "Javascript", icon: "javascript.svg" },
+      { name: "Typescript", icon: "typescript.svg" },
+      { name: "Python", icon: "python.svg" },
+      { name: "Java", icon: "java.svg" },
     ],
   },
   {
     title: "Markup / Style",
     skills: [
-      { name: "CSS5", icon: "javascript.png" },
-      { name: "HTML5", icon: "javascript.png" },
-      { name: "Bootstrap", icon: "javascript.png" },
+      { name: "CSS3", icon: "CSS.svg" },
+      { name: "HTML5", icon: "HTML.svg" },
+      { name: "Bootstrap", icon: "bootstrap.svg" },
     ],
   },
   {
     title: "Frameworks / Libraries",
     skills: [
-      { name: "React", icon: "javascript.png" },
-      { name: "Svelte", icon: "javascript.png" },
-      { name: "Vue", icon: "javascript.png" },
+      { name: "React", icon: "react.svg" },
+      { name: "Svelte", icon: "svelte.svg" },
+      { name: "Vue", icon: "vue.svg" },
+      { name: "Nuxt", icon: "nuxt.svg" },
     ],
   },
   {
     title: "Tools",
     skills: [
-      { name: "Figma", icon: "javascript.png" },
-      { name: "Canva", icon: "javascript.png" },
-      { name: "Github", icon: "javascript.png" },
-      { name: "Git", icon: "javascript.png" },
+      { name: "Figma", icon: "figma.svg" },
+      { name: "Github", icon: "github.svg" },
+      { name: "Git", icon: "git.svg" },
     ],
   },
   {
-    title: "Tools",
+    title: "Backend",
     skills: [
-      { name: "Figma", icon: "javascript.png" },
-      { name: "Canva", icon: "javascript.png" },
-      { name: "Github", icon: "javascript.png" },
-      { name: "Git", icon: "javascript.png" },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      { name: "Figma", icon: "javascript.png" },
-      { name: "Canva", icon: "javascript.png" },
-      { name: "Github", icon: "javascript.png" },
-      { name: "Git", icon: "javascript.png" },
+      { name: "Django", icon: "django.svg" },
+      { name: "Supabase", icon: "supabase.svg" },
+      { name: "Express JS", icon: "expressjs.svg" },
     ],
   },
 ];
