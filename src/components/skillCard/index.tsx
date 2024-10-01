@@ -11,7 +11,7 @@ const SkillCard = ({ name, icon }: SkillCardProps) => {
       <button
         className={style.skillCard}
         style={{
-          backgroundImage: `url(${icon})`,
+          backgroundImage: `url("${icon}")`,
         }}
       >
         {name}

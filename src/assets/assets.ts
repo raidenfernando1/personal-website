@@ -15,8 +15,10 @@ import git from "./skills/git.svg";
 import django from "./skills/django.svg";
 import supabase from "./skills/supabase.svg";
 import expressJs from "./skills/expressjs.svg";
+
 // Misc
 import grain from "./grain.png";
+
 //homePage
 import me from "./me.png";
 
