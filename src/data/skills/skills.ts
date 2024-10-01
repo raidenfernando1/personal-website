@@ -1,44 +1,46 @@
+import { skillsAssets } from "../../assets/assets";
+
 export const skillsList = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "Javascript", icon: "javascript.svg" },
-      { name: "Typescript", icon: "typescript.svg" },
-      { name: "Python", icon: "python.svg" },
-      { name: "Java", icon: "java.svg" },
+      { name: "Javascript", icon: skillsAssets.Javascript },
+      { name: "Typescript", icon: skillsAssets.Typescript },
+      { name: "Python", icon: skillsAssets.python },
+      { name: "Java", icon: skillsAssets.Java },
     ],
   },
   {
     title: "Markup / Style",
     skills: [
-      { name: "CSS3", icon: "CSS.svg" },
-      { name: "HTML5", icon: "HTML.svg" },
-      { name: "Bootstrap", icon: "bootstrap.svg" },
+      { name: "CSS3", icon: skillsAssets.CSS3 },
+      { name: "HTML5", icon: skillsAssets.HTML5 },
+      { name: "Bootstrap", icon: skillsAssets.Bootstrap },
     ],
   },
   {
     title: "Frameworks / Libraries",
     skills: [
-      { name: "React", icon: "react.svg" },
-      { name: "Svelte", icon: "svelte.svg" },
-      { name: "Vue", icon: "vue.svg" },
-      { name: "Nuxt", icon: "nuxt.svg" },
+      { name: "React", icon: skillsAssets.React },
+      { name: "Svelte", icon: skillsAssets.Svelte },
+      { name: "Vue", icon: skillsAssets.Vue },
+      { name: "Nuxt", icon: skillsAssets.Nuxt },
     ],
   },
   {
     title: "Tools",
     skills: [
-      { name: "Figma", icon: "figma.svg" },
-      { name: "Github", icon: "github.svg" },
-      { name: "Git", icon: "git.svg" },
+      { name: "Figma", icon: skillsAssets.Figma },
+      { name: "Github", icon: skillsAssets.Github },
+      { name: "Git", icon: skillsAssets.Git },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Django", icon: "django.svg" },
-      { name: "Supabase", icon: "supabase.svg" },
-      { name: "Express JS", icon: "expressjs.svg" },
+      { name: "Django", icon: skillsAssets.Django },
+      { name: "Supabase", icon: skillsAssets.Supabase },
+      { name: "Express JS", icon: skillsAssets.ExpressJS },
     ],
   },
 ];

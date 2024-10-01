@@ -1,4 +1,5 @@
 import style from "./home.module.css";
+import { homeAssets } from "../../assets/assets";
 
 const homePage = () => {
   return (
@@ -21,7 +22,7 @@ const homePage = () => {
           </div>
         </div>
         <div className={style.rightContainer}>
-          <img src="../public/me.png" alt="me" />
+          <img src={homeAssets.selfImage} alt="me" />
         </div>
       </div>
     </>

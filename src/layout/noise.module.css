@@ -6,7 +6,6 @@
   left: -50%;
   right: -50%;
   bottom: -50%;
-  background: transparent url(../public/grain.png) repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation 0.5s steps(10) infinite;
   opacity: 1;
