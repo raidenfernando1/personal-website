@@ -13,9 +13,9 @@ export const skillsList = [
   {
     title: "Markup / Style",
     skills: [
+      { name: "Bootstrap", icon: skillsAssets.Bootstrap },
       { name: "CSS3", icon: skillsAssets.CSS3 },
       { name: "HTML5", icon: skillsAssets.HTML5 },
-      { name: "Bootstrap", icon: skillsAssets.Bootstrap },
     ],
   },
   {
@@ -25,22 +25,26 @@ export const skillsList = [
       { name: "Svelte", icon: skillsAssets.Svelte },
       { name: "Vue", icon: skillsAssets.Vue },
       { name: "Nuxt", icon: skillsAssets.Nuxt },
+      { name: "Open CV", icon: skillsAssets.OpenCV },
     ],
   },
   {
     title: "Tools",
     skills: [
-      { name: "Figma", icon: skillsAssets.Figma },
       { name: "Github", icon: skillsAssets.Github },
       { name: "Git", icon: skillsAssets.Git },
+      { name: "Jira", icon: skillsAssets.Jira },
+      { name: "Slack", icon: skillsAssets.Slack },
+      { name: "Figma", icon: skillsAssets.Figma },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Django", icon: skillsAssets.Django },
       { name: "Supabase", icon: skillsAssets.Supabase },
+      { name: "Firebase", icon: skillsAssets.Firebase },
       { name: "Express JS", icon: skillsAssets.ExpressJS },
+      { name: "Django", icon: skillsAssets.Django },
     ],
   },
 ];
