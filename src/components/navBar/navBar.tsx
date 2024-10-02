@@ -28,7 +28,7 @@ const NavigationBar = () => {
         <div className={style.navContents}>
           <Link to="/">RAIDEN FERNANDO</Link>
           <nav>
-            <ul>
+            <ul className={style.navBtns}>
               {navLinks.map((nav) => (
                 <li key={nav.route}>
                   <Link to={nav.route}>{nav.title}</Link>
