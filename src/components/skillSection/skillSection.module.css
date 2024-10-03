@@ -16,3 +16,12 @@
 .section {
   padding: 30px 0px;
 }
+
+@media (max-width: 750px) {
+  .skillContents {
+    gap: 0px;
+  }
+  .section {
+    padding: 20px 0px;
+  }
+}

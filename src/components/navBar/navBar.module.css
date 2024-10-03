@@ -29,10 +29,6 @@
 }
 
 @media (max-width: 750px) {
-  .navWrapper {
-    position: relative;
-    padding-inline: 0%;
-  }
   .navContents ul {
     display: none;
   }
