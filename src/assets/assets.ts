@@ -32,6 +32,10 @@ import grain from "./grain.png";
 //homePage
 import me from "./me.png";
 
+//contactPage
+import facebook from "./contact/facebook.svg";
+import instagram from "./contact/instagram.svg";
+
 export const skillsAssets = {
   Javascript: javascript,
   Typescript: typescript,
@@ -62,4 +66,10 @@ export const misc = {
 
 export const homeAssets = {
   selfImage: me,
+};
+
+export const contactAssets = {
+  Instagram: instagram,
+  Facebook: facebook,
+  Github: github,
 };

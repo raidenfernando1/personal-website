@@ -1,0 +1,101 @@
+.contactLayout {
+  height: 100vh;
+  padding-block: 100px;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.pageTitle {
+  padding-bottom: 30px;
+}
+
+.senderDetails {
+  display: flex;
+  gap: 10px;
+}
+
+.senderDetails > input {
+  text-align: left;
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: 1px solid white;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.formContainer button {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 1.25rem;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+.formContainer > p {
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.formContainer p > a {
+  margin-left: 10px;
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.formContainer input,
+textarea {
+  outline: none;
+}
+
+.message {
+  display: flex;
+  flex: 1;
+  min-height: 50vh;
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.contactFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 10px;
+}
+
+.contactFooter > ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.contactFooter > p {
+  font-size: 0.6rem;
+  color: grey;
+  cursor: default;
+}
+
+.contactFooter li > a {
+  text-decoration: none;
+}
+
+.contactFooter a > img {
+  width: 30px;
+  height: auto;
+  filter: grayscale(1);
+  border: 1px solid white;
+  padding: 5px;
+}
+
+@media (max-width: 750px) {
+  .contactFooter {
+    flex-direction: column-reverse;
+  }
+}

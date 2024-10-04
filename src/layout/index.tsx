@@ -1,11 +1,21 @@
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import style from "./layout.module.css";
 import NoiseStyle from "./noise.module.css";
+import { misc } from "../assets/assets";
+
 import NavigationBar from "../components/navBar/navBar";
+
 import HomePage from "../pages/home";
 import SkillPage from "../pages/skills";
-import { misc } from "../assets/assets";
+import ContactPage from "../pages/contact";
+
 function App() {
+  useEffect(() => {
+    console.log("Hello thanks for visiting my website!");
+    console.log("Please dont look at my CSS its bad im aware. 😀");
+  }, []);
+
   return (
     <>
       <div
@@ -20,7 +30,8 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage></HomePage>} />
-              <Route path="/skills" element={<SkillPage></SkillPage>} />
+              <Route path="/skills" element={<SkillPage></SkillPage>} />{" "}
+              <Route path="/contact" element={<ContactPage></ContactPage>} />
             </Routes>
           </main>
         </Router>
