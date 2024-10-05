@@ -3,3 +3,9 @@
   height: 100%;
   box-shadow: inset 0px 0px 10vw white;
 }
+
+@media (max-width: 750px) {
+  .pageLayout {
+    padding-top: 50px;
+  }
+}

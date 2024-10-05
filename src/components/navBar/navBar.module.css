@@ -28,8 +28,40 @@
   text-decoration: none;
 }
 
+.hiddenNav {
+  display: none;
+  border: 0px;
+  cursor: pointer;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+}
+
+/*shit doesnt work*/
+.responsiveNav {
+  display: none;
+}
+
+.openNav {
+  height: 100vh;
+  background-color: rgb(10, 10, 10, 0.1);
+  animation: blur 300ms;
+}
+
+@keyframes blur {
+  from {
+    filter: blur(20px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
+
 @media (max-width: 750px) {
   .navContents ul {
     display: none;
+  }
+  .hiddenNav {
+    display: block;
   }
 }

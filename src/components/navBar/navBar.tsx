@@ -10,6 +10,12 @@ const NavigationBar = () => {
   ];
 
   const [isScroll, setIsScroll] = useState(false);
+  const [openNav, setOpenNav] = useState(false);
+
+  const toggleNav = () => {
+    setOpenNav(!openNav);
+    console.log(openNav);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,8 +41,25 @@ const NavigationBar = () => {
                 </li>
               ))}
             </ul>
+            <button className={style.hiddenNav} onClick={toggleNav}>
+              {/* menu bar */}
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect y="4" width="24" height="2" fill="currentColor" />
+                <rect y="11" width="24" height="2" fill="currentColor" />
+                <rect y="18" width="24" height="2" fill="currentColor" />
+              </svg>
+            </button>
           </nav>
         </div>
+      </div>
+      <div className={`${style.responsiveNav} ${openNav ? style.openNav : ""}`}>
+        {/* Navigation content goes here */}test
       </div>
     </>
   );
