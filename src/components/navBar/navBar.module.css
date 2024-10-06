@@ -44,14 +44,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(20, 20, 20, 0.1);
+  background-color: rgb(10, 10, 10, 0.1);
   backdrop-filter: blur(10px);
-  transition: 300ms;
   padding-inline: 15%;
+  animation: blur 300ms alternate;
 }
 
 .navNotOpen {
   display: none;
+}
+
+@keyframes blur {
+  from {
+    backdrop-filter: blur(20px);
+  }
+  to {
+    backdrop-filter: blur(0px);
+  }
 }
 
 .hiddenNavLinks {

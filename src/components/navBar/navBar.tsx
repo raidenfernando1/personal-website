@@ -14,7 +14,6 @@ const NavigationBar = () => {
 
   const toggleNav = () => {
     setOpenNav(!openNav);
-    console.log(openNav);
   };
 
   useEffect(() => {
@@ -57,11 +56,7 @@ const NavigationBar = () => {
           </nav>
         </div>
       </div>
-      <div
-        className={`${style.responsiveNav} ${
-          openNav ? style.navOpen : style.navNotOpen
-        }`}
-      >
+      <div className={` ${openNav ? style.navOpen : style.navNotOpen}`}>
         <nav>
           <ul className={style.hiddenNavLinks}>
             {navLinks.map((nav) => (
