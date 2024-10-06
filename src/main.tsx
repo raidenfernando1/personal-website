@@ -4,6 +4,10 @@ import { createRoot } from "react-dom/client";
 import App from "./layout";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
 
 // strict mode removed!
