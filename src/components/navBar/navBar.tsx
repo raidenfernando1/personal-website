@@ -42,7 +42,6 @@ const NavigationBar = () => {
               ))}
             </ul>
             <button className={style.hiddenNav} onClick={toggleNav}>
-              {/* menu bar */}
               <svg
                 width="24"
                 height="24"
@@ -58,8 +57,22 @@ const NavigationBar = () => {
           </nav>
         </div>
       </div>
-      <div className={`${style.responsiveNav} ${openNav ? style.openNav : ""}`}>
-        {/* Navigation content goes here */}test
+      <div
+        className={`${style.responsiveNav} ${
+          openNav ? style.navOpen : style.navNotOpen
+        }`}
+      >
+        <nav>
+          <ul className={style.hiddenNavLinks}>
+            {navLinks.map((nav) => (
+              <li key={nav.route}>
+                <Link to={nav.route} onClick={() => setOpenNav(!openNav)}>
+                  {nav.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </>
   );

@@ -89,8 +89,6 @@ textarea {
 .contactFooter a > img {
   width: 30px;
   height: auto;
-  filter: grayscale(1);
-  border: 1px solid white;
   padding: 5px;
 }
 
