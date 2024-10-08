@@ -6,10 +6,7 @@
   left: -50%;
   right: -50%;
   bottom: -50%;
-  background-repeat: repeat;
-  animation: bg-animation 0.5s steps(10) infinite;
-  opacity: 1;
-  visibility: visible;
+  animation: bg-animation 0.8s steps(10) infinite;
 }
 
 @keyframes bg-animation {
