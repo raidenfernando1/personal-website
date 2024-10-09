@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import style from "./layout.module.css";
 import NoiseStyle from "./noise.module.css";
 import { misc } from "../assets/assets";
-import { Analytics } from "@vercel/analytics/react";
 
 import NavigationBar from "../components/navBar/navBar";
 
@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <Analytics>
+    <>
       <div
         className={NoiseStyle.noise}
         style={{
@@ -37,7 +37,8 @@ function App() {
           </main>
         </Router>
       </div>
-    </Analytics>
+      <Analytics></Analytics>
+    </>
   );
 }
 
