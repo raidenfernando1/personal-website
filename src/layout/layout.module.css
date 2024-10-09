@@ -1,7 +1,7 @@
 .pageLayout {
   padding-inline: 15%;
   height: 100%;
-  box-shadow: inset 0px 0px 10vw white;
+  box-shadow: inset 0px 0px 12vw white;
 }
 
 @media (max-width: 750px) {

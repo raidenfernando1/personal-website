@@ -20,12 +20,18 @@
 
 .formContainer > textarea {
   height: 30vh;
-  border: 2px solid white;
+  border: 0px solid white;
+  box-shadow: 0px 0px 5vw 1px inset white;
   background-color: transparent;
   outline: none;
   resize: none;
   font: inherit;
   padding: 10px;
+  transition: 300ms;
+}
+
+.formContainer > textarea:hover {
+  box-shadow: 0px 0px 0vw 1px inset white;
 }
 
 .senderDetails {
@@ -36,15 +42,21 @@
 
 .senderDetails > input {
   background-color: transparent;
-  border: 2px solid white;
+  border: 0px solid white;
+  box-shadow: 0px 0px 2vw 1px inset white;
   outline: none;
   padding: 10px;
   width: 100%;
+  transition: 300ms;
+}
+
+.senderDetails > input:hover {
+  box-shadow: 0px 0px 0vw 1px inset white;
 }
 
 .buttonWrapper > button {
   padding: 7px 40px;
-  border: 2px solid white;
+  border: 0px;
   background-color: transparent;
   cursor: pointer;
   transition: 1s;
@@ -52,7 +64,7 @@
 }
 
 .buttonWrapper > button.active {
-  box-shadow: 0px 0px 18px 1px inset white;
+  box-shadow: 0px 0px 2vw 1px inset white;
 }
 
 .imgContainer ul {
@@ -66,7 +78,7 @@
   width: 5vw;
   height: auto;
   filter: opacity(0.5);
-  filter: blur(2px);
+  filter: blur(5px);
   transition: 300ms;
 }
 

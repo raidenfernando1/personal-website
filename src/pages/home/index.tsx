@@ -1,7 +1,17 @@
 import style from "./home.module.css";
+import { Link } from "react-router-dom";
 import { homeAssets } from "../../assets/assets";
+import { useState } from "react";
 
 const homePage = () => {
+  const [resumeClick, setResumeClick] = useState("Resume / CV");
+  const handleResumeClick = () => {
+    setResumeClick("Not available at the moment :p");
+    setTimeout(() => {
+      setResumeClick("Resume / CV");
+    }, 5000);
+  };
+
   return (
     <>
       <div className={style.homePage}>
@@ -9,16 +19,18 @@ const homePage = () => {
           <div className="introduction">
             <h1>Raiden Fernando</h1>
             <p>
-              Welcome to my personal website. Here, you will find a
-              comprehensive overview of my skills and ways to get in touch with
-              me. I invite you to explore and feel free to reach out with any
-              inquiries or for further information. Your interest is greatly
-              appreciated.
+              Welcome to my personal website! Here, you’ll find a detailed
+              overview of my skills and various ways to get in touch. Feel free
+              to explore, and don’t hesitate to reach out for professional
+              inquiries, casual conversations, or more information. Thank you
+              for your interest!
             </p>
           </div>
           <div className={style.contactBtns}>
-            <button>Resume / CV</button>
-            <button>Get in touch</button>
+            <button onClick={handleResumeClick}>{resumeClick}</button>
+            <button>
+              <Link to="/contact">Get in touch</Link>
+            </button>
           </div>
         </div>
         <div className={style.rightContainer}>

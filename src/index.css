@@ -12,6 +12,10 @@
   letter-spacing: 1px;
 }
 
+a {
+  text-decoration: none;
+}
+
 html,
 body {
   background-color: rgb(25, 25, 25);

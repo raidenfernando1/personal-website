@@ -1,6 +1,7 @@
 import styles from "./contact.module.css";
 import { contactLinks } from "../../data/skills/contact";
 import React, { useState } from "react";
+import { sendEmail } from "../../api/sendEmail";
 
 const ContactPage = () => {
   const [submittedForm, setSubmittedForm] = useState({
@@ -8,7 +9,7 @@ const ContactPage = () => {
     email: "",
     contents: "",
   });
-  const [buttonMessage, setButtonMessage] = useState("Submit");
+  const [buttonMessage, setButtonMessage] = useState("Send a message!");
   const [buttonAnim, setButtonAnim] = useState(true);
 
   const isSubmitToggle = () => {
@@ -25,15 +26,21 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form data: ", submittedForm);
-    setButtonMessage("Thank you! 😁");
+
+    const response = await sendEmail(submittedForm);
+    if (response) {
+      setButtonMessage("Thank you! :)");
+    } else {
+      setButtonMessage("Error! :p");
+    }
+
     isSubmitToggle();
     setTimeout(() => {
-      setButtonMessage("Send a message");
+      setButtonMessage("Send a message!");
       isSubmitToggle();
-    }, 2000);
+    }, 5000);
   };
 
   return (
