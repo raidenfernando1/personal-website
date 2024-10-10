@@ -39,6 +39,11 @@ const ContactPage = () => {
     isSubmitToggle();
     setTimeout(() => {
       setButtonMessage("Send a message!");
+      setSubmittedForm({
+        name: "",
+        email: "",
+        contents: "",
+      });
       isSubmitToggle();
     }, 5000);
   };

@@ -29,7 +29,11 @@
 .rightContainer img {
   width: 25vw;
   height: auto;
-  border: 2px solid white;
+  box-shadow: inset 0px 0px 5vw 1px white;
+}
+
+.rightContainer img:hover {
+  box-shadow: inset 0px 0px 0vw 1px white;
 }
 
 @media (max-width: 750px) {

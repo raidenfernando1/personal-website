@@ -27,7 +27,7 @@ const homePage = () => {
             </p>
           </div>
           <div className={style.contactBtns}>
-            <a>{resumeClick}</a>
+            <a onClick={handleResumeClick}>{resumeClick}</a>
             <Link to="/contact">Get in touch</Link>
           </div>
         </div>
