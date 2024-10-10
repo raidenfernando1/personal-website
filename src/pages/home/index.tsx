@@ -27,10 +27,8 @@ const homePage = () => {
             </p>
           </div>
           <div className={style.contactBtns}>
-            <button onClick={handleResumeClick}>{resumeClick}</button>
-            <button>
-              <Link to="/contact">Get in touch</Link>
-            </button>
+            <a>{resumeClick}</a>
+            <Link to="/contact">Get in touch</Link>
           </div>
         </div>
         <div className={style.rightContainer}>

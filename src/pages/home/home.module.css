@@ -12,23 +12,18 @@
   gap: 10px;
 }
 
-.contactBtns button {
-  margin-top: 10px;
-  padding: 8px 15px;
-  font-weight: 600;
-  font-size: 1rem;
-  background: transparent;
-  border: 2px solid rgb(230, 230, 230);
+.contactBtns a {
+  padding: 10px 30px;
+  box-shadow: inset 0px 0px 2vw 1px white;
+  color: white;
   cursor: pointer;
+  margin-top: 20px;
+  transition: 300ms;
+  font-weight: 600;
 }
 
-.contactBtns button:hover {
-  background-color: rgb(230, 230, 230);
-  color: black;
-  transition: ease-in-out 300ms;
-}
 .contactBtns a:hover {
-  color: black;
+  box-shadow: inset 0px 0px 0vw 1px white;
 }
 
 .rightContainer img {
