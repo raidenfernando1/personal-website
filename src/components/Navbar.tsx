@@ -2,6 +2,7 @@ import { ImageLink } from "./StyledLinks"; // Correct import
 import github from "../assets/github.svg";
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
+import name from "../assets/name.svg";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -9,6 +10,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
+  height: auto;
 `;
 
 const NavList = styled.ul`
@@ -30,7 +32,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <h1 style={{ fontSize: "inherit" }}>Raiden Fernando</h1>
+      <h1>Raiden Fernando</h1>
       <NavList>
         {NavItems.map((nav) => (
           <NavLinks key={nav.name}>
