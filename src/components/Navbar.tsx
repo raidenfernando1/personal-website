@@ -12,6 +12,11 @@ const Nav = styled.nav`
   height: auto;
 `;
 
+const NavWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+`;
+
 const NavList = styled.ul`
   display: flex;
   align-items: center;
@@ -40,23 +45,25 @@ const Navbar = () => {
   ];
 
   return (
-    <Nav>
-      <NameButton aria-label="Refresh website" href="/">
-        Raiden Fernando
-      </NameButton>
-      <NavList>
-        {NavItems.map((nav) => (
-          <NavLinks key={nav.name}>
-            <ImageLink
-              ariaLabel={nav.name}
-              navigate={nav.link}
-              imagePath={nav.imagePath}
-              imageAlt={nav.name}
-            />
-          </NavLinks>
-        ))}
-      </NavList>
-    </Nav>
+    <NavWrapper>
+      <Nav>
+        <NameButton aria-label="Refresh website" href="/">
+          Raiden Fernando
+        </NameButton>
+        <NavList>
+          {NavItems.map((nav) => (
+            <NavLinks key={nav.name}>
+              <ImageLink
+                ariaLabel={nav.name}
+                navigate={nav.link}
+                imagePath={nav.imagePath}
+                imageAlt={nav.name}
+              />
+            </NavLinks>
+          ))}
+        </NavList>
+      </Nav>
+    </NavWrapper>
   );
 };
 
