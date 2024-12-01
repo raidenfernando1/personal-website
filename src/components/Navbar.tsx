@@ -1,5 +1,8 @@
+import { ImageLink } from "./StyledLinks"; // Correct import
+import github from "../assets/github.svg";
+import facebook from "../assets/facebook.svg";
+import instagram from "../assets/instagram.svg";
 import styled from "styled-components";
-import StyledLink from "./StyledLink";
 
 const Nav = styled.nav`
   display: flex;
@@ -20,9 +23,9 @@ const NavLinks = styled.li`
 
 const Navbar = () => {
   const NavItems = [
-    { name: "Facebook", link: "/" },
-    { name: "Instagram", link: "/" },
-    { name: "Github", link: "/" },
+    { name: "Facebook", link: "/", imagePath: facebook },
+    { name: "Gmail", link: "/", imagePath: instagram },
+    { name: "Github", link: "/", imagePath: github },
   ];
 
   return (
@@ -31,12 +34,12 @@ const Navbar = () => {
       <NavList>
         {NavItems.map((nav) => (
           <NavLinks key={nav.name}>
-            <StyledLink
-              ariaLabel={`Navigate to ${nav.link}`}
+            <ImageLink
+              ariaLabel={nav.name}
               navigate={nav.link}
-            >
-              {nav.name}
-            </StyledLink>
+              imagePath={nav.imagePath}
+              imageAlt={nav.name}
+            />
           </NavLinks>
         ))}
       </NavList>
