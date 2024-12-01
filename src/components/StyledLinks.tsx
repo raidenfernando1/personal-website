@@ -16,8 +16,13 @@ interface ImageLinkTypes {
 }
 
 const ImageLinkStyle = styled.img`
-  height: 35px;
+  height: 30px;
   width: auto;
+  transition: 300ms;
+
+  &:hover {
+    filter: opacity(60%);
+  }
 `;
 
 export const StandardLink: React.FC<StandardLinkTypes> = ({
