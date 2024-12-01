@@ -1,4 +1,4 @@
-import { StandardLink, ImageLink } from "./StyledLinks"; // Correct import
+import { ImageLink } from "./StyledLinks"; // Correct import
 import github from "../assets/github.svg";
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
