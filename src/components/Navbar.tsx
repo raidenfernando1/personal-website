@@ -13,8 +13,8 @@ const Nav = styled.nav`
 `;
 
 const NavWrapper = styled.div`
-  position: absolute;
   width: 100%;
+  position: block;
 `;
 
 const NavList = styled.ul`

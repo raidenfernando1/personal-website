@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { StandardLink } from "../../components/StyledLinks";
+import Navbar from "../../components/Navbar";
 
 const BasedOn = styled.p`
   letter-spacing: 0px;
@@ -20,7 +21,7 @@ const SubDescription = styled.h2`
   text-align: center;
   line-height: 2.3;
   display: flex;
-  gap: 8px;
+  gap: 3px;
 
   > a {
     color: white;
@@ -33,7 +34,7 @@ const SubDescription = styled.h2`
 `;
 
 const HomeContents = styled.div`
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,18 +43,21 @@ const HomeContents = styled.div`
 
 const Home = () => {
   return (
-    <HomeContents>
-      <BasedOn>BASED IN RIZAL / PHILIPPINES</BasedOn>
-      <Description>
-        Software Engineer Specializing in Web & Mobile Applications
-      </Description>
-      <SubDescription>
-        Hi, I'm Raiden, I make websites
-        <StandardLink ariaLabel="Download my CV" navigate="/">
-          Download my CV
-        </StandardLink>
-      </SubDescription>
-    </HomeContents>
+    <>
+      <Navbar />
+      <HomeContents>
+        <BasedOn>BASED IN RIZAL / PHILIPPINES</BasedOn>
+        <Description>
+          Software Engineer Specializing in Web & Mobile Applications
+        </Description>
+        <SubDescription>
+          Hi, I'm Raiden, I make very cool websites
+          <StandardLink ariaLabel="Download my CV" navigate="/">
+            Download my CV
+          </StandardLink>
+        </SubDescription>
+      </HomeContents>
+    </>
   );
 };
 

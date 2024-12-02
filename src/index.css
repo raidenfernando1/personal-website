@@ -27,3 +27,9 @@ body {
     font-size: 2vw;
   }
 }
+
+@media (min-width: 2000px) {
+  :root {
+    font-size: 1.5rem;
+  }
+}
