@@ -55,8 +55,8 @@ const HomeContents = styled.div`
     filter: opacity(60%);
   }
 
-  @media (max-width: 1030px) {
-    padding-inline: 20px;
+  @media (max-width: 400px) {
+    padding-inline: 0px;
   }
 `;
 

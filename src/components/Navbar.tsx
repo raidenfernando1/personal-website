@@ -32,6 +32,9 @@ const NameButton = styled.a`
   transition: 300ms;
   paddingblock: 5px;
 
+  @media (max-width: 400px) {
+    font-size: 2rem;
+  }
   &:hover {
     filter: opacity(60%);
   }
