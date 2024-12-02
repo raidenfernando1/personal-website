@@ -6,6 +6,10 @@ const BasedOn = styled.p`
   letter-spacing: 0px;
   font-size: 0.8rem;
   line-height: 5;
+
+  @media (max-width: 1030px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Description = styled.h1`
@@ -31,6 +35,10 @@ const SubDescription = styled.h2`
   > a:hover {
     filter: opacity(60%);
   }
+
+  @media (max-width: 1030px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const HomeContents = styled.div`
@@ -39,6 +47,10 @@ const HomeContents = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1030px) {
+    padding-inline: 10px;
+  }
 `;
 
 const Home = () => {
@@ -51,7 +63,7 @@ const Home = () => {
           Software Engineer Specializing in Web & Mobile Applications
         </Description>
         <SubDescription>
-          Hi, I'm Raiden, I make very cool websites
+          Hi, I'm Raiden, I make websites
           <StandardLink ariaLabel="Download my CV" navigate="/">
             Download my CV
           </StandardLink>
