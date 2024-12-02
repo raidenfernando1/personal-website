@@ -6,10 +6,7 @@ const BasedOn = styled.p`
   letter-spacing: 0px;
   font-size: 0.8rem;
   line-height: 5;
-
-  @media (max-width: 1030px) {
-    font-size: 1.5rem;
-  }
+  transition 1s;  
 `;
 
 const Description = styled.h1`
@@ -27,15 +24,6 @@ const SubDescription = styled.h2`
   display: flex;
   gap: 3px;
 
-  > a {
-    color: white;
-    transition: 300ms;
-  }
-
-  > a:hover {
-    filter: opacity(60%);
-  }
-
   @media (max-width: 1030px) {
     font-size: 1.5rem;
   }
@@ -47,6 +35,25 @@ const HomeContents = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: blur 0.8s;
+
+  @keyframes blur {
+    from {
+      filter: blur(20px);
+    }
+    to {
+      filter: blur(0px);
+    }
+  }
+
+  > a {
+    color: white;
+    transition: 300ms;
+  }
+
+  > a:hover {
+    filter: opacity(60%);
+  }
 
   @media (max-width: 1030px) {
     padding-inline: 20px;
@@ -58,7 +65,7 @@ const Home = () => {
     <>
       <Navbar />
       <HomeContents>
-        <BasedOn>BASED IN RIZAL / PHILIPPINES</BasedOn>
+        <BasedOn>BASED IN PHILIPPINES / RIZAL</BasedOn>
         <Description>
           Software Engineer | Focused on Building Websites and Web Apps{" "}
         </Description>
