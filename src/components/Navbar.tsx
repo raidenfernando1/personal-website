@@ -1,4 +1,4 @@
-import { ImageLink } from "./StyledLinks"; // Correct import
+import { ImageLink } from "./StyledLinks";
 import github from "../assets/github.svg";
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
@@ -39,9 +39,21 @@ const NameButton = styled.a`
 
 const Navbar = () => {
   const NavItems = [
-    { name: "Facebook", link: "/", imagePath: facebook },
-    { name: "Gmail", link: "/", imagePath: instagram },
-    { name: "Github", link: "/", imagePath: github },
+    {
+      name: "Facebook",
+      link: "https://www.facebook.com/raidenfernando9",
+      imagePath: facebook,
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/zillakamimicrowave/",
+      imagePath: instagram,
+    },
+    {
+      name: "Github",
+      link: "https://github.com/raidenfernando1",
+      imagePath: github,
+    },
   ];
 
   return (

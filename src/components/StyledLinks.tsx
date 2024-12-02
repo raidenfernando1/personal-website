@@ -31,7 +31,7 @@ export const StandardLink: React.FC<StandardLinkTypes> = ({
   navigate,
 }) => {
   return (
-    <a aria-label={ariaLabel} href={navigate}>
+    <a aria-label={ariaLabel} href={navigate} target="_blank">
       {children}
     </a>
   );
@@ -44,7 +44,7 @@ export const ImageLink: FunctionComponent<ImageLinkTypes> = ({
   imageAlt = "",
 }) => {
   return (
-    <a aria-label={ariaLabel} href={navigate}>
+    <a aria-label={ariaLabel} href={navigate} target="_blank">
       <ImageLinkStyle src={imagePath} alt={imageAlt} />
     </a>
   );
