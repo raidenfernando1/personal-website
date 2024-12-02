@@ -49,7 +49,7 @@ const HomeContents = styled.div`
   align-items: center;
 
   @media (max-width: 1030px) {
-    padding-inline: 10px;
+    padding-inline: 20px;
   }
 `;
 
@@ -60,7 +60,7 @@ const Home = () => {
       <HomeContents>
         <BasedOn>BASED IN RIZAL / PHILIPPINES</BasedOn>
         <Description>
-          Software Engineer Specializing in Web & Mobile Applications
+          Software Engineer | Focused on Building Websites and Web Apps{" "}
         </Description>
         <SubDescription>
           Hi, I'm Raiden, I make websites
