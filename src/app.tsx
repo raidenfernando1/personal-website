@@ -1,5 +1,6 @@
 import "./app.css";
-import Home from "./pages/home";
+import Home from "./pages/Home";
+import GlobalButton from "./pages/GlobalButton";
 import styled from "styled-components";
 
 const WebsiteLayout = styled.main`
@@ -12,16 +13,13 @@ const WebsiteLayout = styled.main`
   @media (max-width: 1000px) {
     margin-inline: 30px;
   }
-
-  @media (max-width: 400px) {
-    margin-inline: 0px;
-  }
 `;
 
 export function App() {
   return (
     <WebsiteLayout>
       <Home />
+      <GlobalButton />
     </WebsiteLayout>
   );
 }
