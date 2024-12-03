@@ -1,16 +1,18 @@
 import styled from "styled-components";
 import arrow from "../../assets/arrow.svg";
+import GlobalButtonAssets from "../../assets/GlobalButtonAssets";
 import { supabase } from "../../supabase";
 import { useState } from "preact/hooks";
 
 const ButtonLayout = styled.section`
-  padding-block: 80px;
+  padding-block: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   > h1 {
     max-width: 50%;
+    font-size: 1rem;
   }
 
   > div {
@@ -113,7 +115,7 @@ const GlobalButton = () => {
     <ButtonLayout>
       <h1>{buttonText}</h1>
       <div>
-        <img src={arrow} />
+        <img src={GlobalButtonAssets.arrow} />
         <button onClick={() => submitClick()}>Button</button>
       </div>
     </ButtonLayout>

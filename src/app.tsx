@@ -1,6 +1,7 @@
 import "./app.css";
 import Home from "./pages/Home";
 import GlobalButton from "./pages/GlobalButton";
+import SkillsPage from "./pages/Skills";
 import styled from "styled-components";
 
 const WebsiteLayout = styled.main`
@@ -20,6 +21,7 @@ export function App() {
     <WebsiteLayout>
       <Home />
       <GlobalButton />
+      <SkillsPage />
     </WebsiteLayout>
   );
 }

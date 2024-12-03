@@ -1,7 +1,5 @@
 import { ImageLink } from "./StyledLinks";
-import github from "../assets/github.svg";
-import facebook from "../assets/facebook.svg";
-import instagram from "../assets/instagram.svg";
+import NavAssets from "../assets/NavBarAssets";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -45,17 +43,17 @@ const Navbar = () => {
     {
       name: "Facebook",
       link: "https://www.facebook.com/raidenfernando9",
-      imagePath: facebook,
+      imagePath: NavAssets.facebook,
     },
     {
       name: "Instagram",
       link: "https://www.instagram.com/zillakamimicrowave/",
-      imagePath: instagram,
+      imagePath: NavAssets.instagram,
     },
     {
       name: "Github",
       link: "https://github.com/raidenfernando1",
-      imagePath: github,
+      imagePath: NavAssets.github,
     },
   ];
 
