@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import arrow from "../../assets/arrow.svg";
+import { supabase } from "../../supabase";
+import { useState } from "preact/hooks";
 
 const ButtonLayout = styled.section`
   padding-block: 80px;
@@ -7,9 +9,12 @@ const ButtonLayout = styled.section`
   align-items: center;
   justify-content: space-between;
 
+  > h1 {
+    max-width: 50%;
+  }
+
   > div {
     display: flex;
-    gap: 0px;
   }
 
   div > button {
@@ -36,13 +41,58 @@ const ButtonLayout = styled.section`
 `;
 
 const GlobalButton = () => {
+  const [buttonText, setButtonText] = useState(
+    "Hello visitor! click this button please."
+  );
+
   const submitClick = async () => {
-    // update the select the current count and adds 1
+    const hasclicked: boolean | null = JSON.parse(
+      localStorage.getItem("hasClicked") as string
+    );
+
+    // fetches the button row
+    const { data, error: fetchError } = await supabase
+      .from("button_clicks")
+      .select("clicks")
+      .eq("id", import.meta.env.VITE_BUTTON_ROW_ID)
+      .single(); // expects this request to only return a single row
+
+    if (fetchError) {
+      console.error("Error: " + data);
+      setButtonText("Error selecting row.");
+      return;
+    }
+
+    const clicks = data.clicks + 1;
+
+    // stop user if has already clicked the button
+    if (hasclicked) {
+      return setButtonText(
+        `You have already clicked this button. The button has been clicked ${data?.clicks} times!`
+      );
+    }
+
+    // updates the button row
+    const { error: updateError } = await supabase
+      .from("button_clicks")
+      .update({ clicks: clicks })
+      .eq("id", import.meta.env.VITE_BUTTON_ROW_ID);
+
+    if (updateError) {
+      console.error("Error: updating row");
+      setButtonText("Error updating row");
+    }
+
+    setButtonText(
+      `This button has been clicked ${data.clicks} times! globally.`
+    );
+
+    localStorage.setItem("hasClicked", JSON.stringify(true));
   };
 
   return (
     <ButtonLayout>
-      <h1>Hello visitor! click this button please.</h1>
+      <h1>{buttonText}</h1>
       <div>
         <img src={arrow} />
         <button onClick={() => submitClick()}>Button</button>
