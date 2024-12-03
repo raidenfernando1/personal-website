@@ -10,6 +10,19 @@ const Nav = styled.nav`
   align-items: center;
   padding-block: 30px;
   height: auto;
+
+  > a {
+    text-decoration: none;
+    transition: 300ms;
+    paddingblock: 5px;
+
+    @media (max-width: 400px) {
+      font-size: 2rem;
+    }
+    &:hover {
+      filter: opacity(60%);
+    }
+  }
 `;
 
 const NavWrapper = styled.div`
@@ -21,22 +34,9 @@ const NavList = styled.ul`
   display: flex;
   align-items: center;
   gap: 30px;
-`;
 
-const NavLinks = styled.li`
-  list-style: none;
-`;
-
-const NameButton = styled.a`
-  text-decoration: none;
-  transition: 300ms;
-  paddingblock: 5px;
-
-  @media (max-width: 400px) {
-    font-size: 2rem;
-  }
-  &:hover {
-    filter: opacity(60%);
+  > li {
+    list-style: none;
   }
 `;
 
@@ -62,19 +62,19 @@ const Navbar = () => {
   return (
     <NavWrapper>
       <Nav>
-        <NameButton aria-label="Refresh website" href="/">
+        <a aria-label="Refresh website" href="/">
           Raiden Fernando
-        </NameButton>
+        </a>
         <NavList>
           {NavItems.map((nav) => (
-            <NavLinks key={nav.name}>
+            <li key={nav.name}>
               <ImageLink
                 ariaLabel={nav.name}
                 navigate={nav.link}
                 imagePath={nav.imagePath}
                 imageAlt={nav.name}
               />
-            </NavLinks>
+            </li>
           ))}
         </NavList>
       </Nav>

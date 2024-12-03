@@ -24,6 +24,10 @@ const ButtonLayout = styled.section`
     border-radius: 15px;
     border: 4px solid white;
     cursor: pointer;
+
+    @media (max-width: 1000px) {
+      border: 2px solid white;
+    }
   }
 
   img {
@@ -36,6 +40,11 @@ const ButtonLayout = styled.section`
       to {
         transform: translateX(0%);
       }
+    }
+
+    @media (max-width: 1000px) {
+      width: 40px;
+      heigh: 40px;
     }
   }
 `;
@@ -50,7 +59,6 @@ const GlobalButton = () => {
       localStorage.getItem("hasClicked") as string
     );
 
-    // fetches the button row
     if (hasClicked) {
       const { data, error: fetchError } = await supabase
         .from("button_clicks")
@@ -70,6 +78,7 @@ const GlobalButton = () => {
       return;
     }
 
+    // selects button click row
     const { data, error: fetchError } = await supabase
       .from("button_clicks")
       .select("clicks")
