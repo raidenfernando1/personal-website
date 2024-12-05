@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import arrow from "../../assets/arrow.svg";
 import GlobalButtonAssets from "../../assets/GlobalButtonAssets";
 import { supabase } from "../../supabase";
 import { useState } from "preact/hooks";
