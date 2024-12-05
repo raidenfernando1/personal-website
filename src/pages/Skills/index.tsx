@@ -28,12 +28,20 @@ const SkillsPage = () => {
       image: SkillsPageAssets.javascript,
     },
     {
+      name: "BunJS",
+      image: SkillsPageAssets.bun,
+    },
+    {
+      name: "NodeJS",
+      image: SkillsPageAssets.node,
+    },
+    {
       name: "React",
       image: SkillsPageAssets.react,
     },
     {
-      name: "Preact",
-      image: SkillsPageAssets.preact,
+      name: "Remix",
+      image: SkillsPageAssets.remix,
     },
     {
       name: "Jest",
