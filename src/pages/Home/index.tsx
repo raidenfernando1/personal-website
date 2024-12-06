@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { StandardLink } from "../../components/StyledLinks";
-import Navbar from "../../components/NavBar";
+import Navbar from "../../components/Navbar";
 
 const BasedOn = styled.p`
   letter-spacing: 0px;
