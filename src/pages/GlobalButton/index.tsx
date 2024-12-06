@@ -22,8 +22,7 @@ const ButtonLayout = styled.section`
     padding: 5px 30px;
     color: white;
     background-color: transparent;
-    border-radius: 15px;
-    border: 4px solid white;
+    border: 1px solid white;
     cursor: pointer;
 
     @media (max-width: 1000px) {
