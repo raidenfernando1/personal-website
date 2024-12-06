@@ -17,6 +17,7 @@ const ProjectsPage = () => {
     <Projects>
       <h1>Some of my projects</h1>
       <ProjectsContainer>
+        <ProjectsCard /> <ProjectsCard />
         <ProjectsCard />
       </ProjectsContainer>
     </Projects>

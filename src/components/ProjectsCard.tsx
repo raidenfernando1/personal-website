@@ -4,14 +4,14 @@ import notey from "../assets/ProjectsAssets/notey/image.png";
 const ProjectsCardStyle = styled.div`
   display: flex;
   gap: 20px;
-  height: 300px;
-  width: 100%;
   border: 1px solid white;
   padding: 15px;
+  height: 350px;
+  width: 100%;
 
   > img {
     width: auto;
-    height: 300px;
+    height: 100%;
     min-height: 200px;
   }
 
