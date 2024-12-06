@@ -1,85 +1,87 @@
 import styled from "styled-components";
 import notey from "../assets/ProjectsAssets/notey/image.png";
 
-const ProjectsCardContainer = styled.div`
+const ProjectsCardStyle = styled.div`
   display: flex;
   gap: 20px;
+  height: 300px;
+  width: 100%;
+  border: 1px solid white;
+  padding: 15px;
 
   > img {
-    width: 500px;
-    height: auto;
+    width: auto;
+    height: 300px;
+    min-height: 200px;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 5px;
+    height: 350px;
+  }
+`;
+const ProjectsDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  > p {
+    height: 100%;
+    overflow-y: scroll;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 1000px) {
+    overflow-y: scroll;
   }
 `;
 
-const ContentsContainer = styled.div`
+const ButtonsContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: end;
-`;
-
-const Description = styled.div`
-  max-height: 200px;
-  overflow-y: scroll;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  gap: 40px;
+  gap: 10px;
 
   > button {
-    padding: 10px 30px;
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+  }
+
+  @media (max-width: 1000px) {
+    > button {
+      padding: 5px;
+    }
   }
 `;
 
 const ProjectsCard = () => {
   return (
-    <>
-      <p>Notey - A Note Management fullstack webapp</p>
-      <ProjectsCardContainer>
-        <img src={notey} />
-        <ContentsContainer>
-          <Description>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-              exercitationem autem, dolore provident omnis vero, praesentium
-              eius iure tempore ad, optio porro molestias culpa at beatae! Quas
-              fugiat id impedit Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Fugiat ipsa adipisci cupiditate magni ullam
-              blanditiis ipsam ipsum quam facilis excepturi hic nesciunt
-              voluptatum saepe, aut amet sed. Ratione, dicta debitis. lorem
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              nobis, eligendi quam natus tenetur quia quidem in, id eaque cum
-              officiis quod eum sit! Molestiae quidem alias harum amet ex! Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Sit
-              exercitationem autem, dolore provident omnis vero, praesentium
-              eius iure tempore ad, optio porro molestias culpa at beatae! Quas
-              fugiat id impedit Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Fugiat ipsa adipisci cupiditate magni ullam
-              blanditiis ipsam ipsum quam facilis excepturi hic nesciunt
-              voluptatum saepe, aut amet sed. Ratione, dicta debitis. lorem
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              nobis, eligendi quam natus tenetur quia quidem in, id eaque cum
-              officiis quod eum sit! Molestiae quidem alias harum amet ex! Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Sit
-              exercitationem autem, dolore provident omnis vero, praesentium
-              eius iure tempore ad, optio porro molestias culpa at beatae! Quas
-              fugiat id impedit Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Fugiat ipsa adipisci cupiditate magni ullam
-              blanditiis ipsam ipsum quam facilis excepturi hic nesciunt
-              voluptatum saepe, aut amet sed. Ratione, dicta debitis. lorem
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              nobis, eligendi quam natus tenetur quia quidem in, id eaque cum
-              officiis quod eum sit! Molestiae quidem alias harum amet ex!
-            </p>
-          </Description>
-          <ButtonContainer>
-            <button>Github</button>
-            <button>Live site</button>
-          </ButtonContainer>
-        </ContentsContainer>
-      </ProjectsCardContainer>
-    </>
+    <ProjectsCardStyle>
+      <img src={notey} />
+      <ProjectsDescription>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel voluptas
+          voluptates quos minus, vitae eligendi perferendis. Itaque perspiciatis
+          fuga enim odio fugit ea pariatur cum, iusto minus earum quos eum!
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo soluta
+          eveniet minus itaque dolorem accusamus voluptatibus fugit obcaecati,
+          eum molestiae neque, culpa veniam blanditiis tenetur facilis, ab
+          reprehenderit odit voluptate. Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Vel voluptas voluptates quos minus, vitae eligendi
+          perferendis. Itaque perspiciatis fuga enim odio fugit ea pariatur cum,
+          iusto minus earum quos eum! Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Quo soluta eveniet minus itaque dolorem accusamus
+          voluptatibus fugit obcaecati, eum molestiae neque, culpa veniam
+          blanditiis tenetur facilis, ab reprehenderit odit voluptate.
+        </p>
+        <ButtonsContainer>
+          <button>Github</button>
+          <button>Live site</button>
+        </ButtonsContainer>
+      </ProjectsDescription>
+    </ProjectsCardStyle>
   );
 };
 
