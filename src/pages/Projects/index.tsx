@@ -6,7 +6,10 @@ const Projects = styled.section`
 `;
 
 const ProjectsContainer = styled.div`
-  padding-block: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-block: 30px;
 `;
 
 const ProjectsPage = () => {
