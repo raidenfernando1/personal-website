@@ -6,10 +6,18 @@ const Projects = styled.section`
 `;
 
 const ProjectsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   margin-block: 30px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const ProjectsPage = () => {
@@ -17,7 +25,14 @@ const ProjectsPage = () => {
     <Projects>
       <h1>Some of my projects</h1>
       <ProjectsContainer>
-        <ProjectsCard /> <ProjectsCard />
+        <ProjectsCard />
+        <ProjectsCard />
+        <ProjectsCard />
+        <ProjectsCard />
+        <ProjectsCard />
+        <ProjectsCard />
+        <ProjectsCard />
+        <ProjectsCard />
         <ProjectsCard />
       </ProjectsContainer>
     </Projects>

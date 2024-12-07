@@ -2,6 +2,10 @@ a {
   color: rgb(200, 200, 200);
 }
 
+p {
+  font-size: 1.2rem;
+}
+
 h1 {
   font-size: 1.5rem;
 }
