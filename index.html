@@ -15,6 +15,17 @@
 
     <title>Raiden Fernando</title>
   </head>
+  <script>
+    // this script disables the scroll for 1.5s on website load
+    window.addEventListener("load", () => {
+      const body = document.body;
+      body.style.overflow = "hidden";
+
+      setTimeout(() => {
+        body.style.overflow = "scroll";
+      }, 1500);
+    });
+  </script>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>

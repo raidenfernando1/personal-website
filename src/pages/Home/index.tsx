@@ -35,16 +35,6 @@ const HomeContents = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: blur 0.8s;
-
-  @keyframes blur {
-    from {
-      filter: blur(20px);
-    }
-    to {
-      filter: blur(0px);
-    }
-  }
 
   > a {
     color: white;

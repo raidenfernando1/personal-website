@@ -7,6 +7,16 @@ import styled from "styled-components";
 
 const WebsiteLayout = styled.main`
   margin-inline: 210px;
+  animation: blur 1.2s;
+
+  @keyframes blur {
+    from {
+      filter: blur(30px);
+    }
+    to {
+      filter: blur(0px);
+    }
+  }
 
   @media (min-width: 2000px) {
     margin-inline: 300px;

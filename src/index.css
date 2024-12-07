@@ -18,10 +18,6 @@
   box-sizing: border-box;
 }
 
-body {
-  color: white;
-}
-
 @media (max-width: 1030px) {
   :root {
     font-size: 2vw;
