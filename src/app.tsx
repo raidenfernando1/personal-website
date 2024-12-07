@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import GlobalButton from "./pages/GlobalButton";
 import SkillsPage from "./pages/Skills";
 import ProjectsPage from "./pages/Projects";
+import ContactPage from "./pages/Contact";
 import styled from "styled-components";
 
 const WebsiteLayout = styled.main`
@@ -34,6 +35,7 @@ export function App() {
       <GlobalButton />
       <SkillsPage />
       <ProjectsPage />
+      <ContactPage />
     </WebsiteLayout>
   );
 }
