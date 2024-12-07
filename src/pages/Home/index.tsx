@@ -29,8 +29,8 @@ const SubDescription = styled.h2`
   }
 `;
 
-const HomeContents = styled.div`
-  height: 80vh;
+const HomeContents = styled.header`
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
