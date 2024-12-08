@@ -22,8 +22,9 @@ const CustomMouse = () => {
     top: ${memoizedMouseCoords.y}px;
     left: ${memoizedMouseCoords.x}px;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
     pointer-events: none;
     backdrop-filter: invert(100%);
     z-index: 1;
