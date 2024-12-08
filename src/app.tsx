@@ -1,4 +1,5 @@
 import "./app.css";
+import CustomMouse from "./components/CustomMouse";
 import Home from "./pages/Home";
 import GlobalButton from "./pages/GlobalButton";
 import SkillsPage from "./pages/Skills";
@@ -31,6 +32,7 @@ const WebsiteLayout = styled.main`
 export function App() {
   return (
     <WebsiteLayout>
+      <CustomMouse />
       <Home />
       <GlobalButton />
       <SkillsPage />
