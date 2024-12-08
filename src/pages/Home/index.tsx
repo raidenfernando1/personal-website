@@ -6,7 +6,8 @@ const BasedOn = styled.p`
   letter-spacing: 0px;
   font-size: 0.8rem;
   line-height: 5;
-  transition 1s;  
+  cursor: default;
+  transition 1s;    
 `;
 
 const Description = styled.h1`
@@ -14,6 +15,7 @@ const Description = styled.h1`
   font-size: 4rem;
   text-align: center;
   line-height: 1;
+  cursor: default;
 `;
 
 const SubDescription = styled.h2`
@@ -22,6 +24,7 @@ const SubDescription = styled.h2`
   text-align: center;
   line-height: 2.3;
   display: flex;
+  cursor: default;
   gap: 3px;
 
   @media (max-width: 1030px) {
