@@ -6,6 +6,12 @@ const ProjectsCardStyle = styled.div`
   align-items: center;
   gap: 10px;
   padding: 5px;
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    transform: translateY(-7%);
+  }
 `;
 
 const ProjectsDescription = styled.div`
