@@ -7,6 +7,13 @@ const ContactForm = () => {
     gap: 5px;
     font-family: inherit;
     width: 100%;
+
+    > button {
+      padding: 5px 10px;
+      border: 1px solid white;
+      background-color: transparent;
+      color: white;
+    }
   `;
 
   const Input = styled.div`
@@ -14,6 +21,9 @@ const ContactForm = () => {
       width: 100%;
       outline: none;
       padding: 5px;
+      border: 1px solid white;
+      background-color: transparent;
+      color: white;
     }
   `;
 
@@ -24,18 +34,21 @@ const ContactForm = () => {
       height: 30vh;
       font-family: inherit;
       padding: 5px;
+      border: 1px solid white;
+      background-color: transparent;
+      color: white;
     }
   `;
 
   return (
     <FormContainer>
       <Input>
-        <label for="Gmail">Name</label>
+        <label for="Name">Name</label>
         <input placeholder="Name" name="Name" id="Name" />
       </Input>
       <Input>
         <label for="Gmail">Gmail</label>
-        <input placeholder="Email" name="Gmail" id="Gmail" />
+        <input type="email" placeholder="Email" name="Gmail" id="Gmail" />
       </Input>
       <TextareaWrapper>
         <label for="Message">Message Contents</label>
@@ -45,6 +58,7 @@ const ContactForm = () => {
           id="Message"
         ></textarea>
       </TextareaWrapper>
+      <button>Submit</button>
     </FormContainer>
   );
 };
