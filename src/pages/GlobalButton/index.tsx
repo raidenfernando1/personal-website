@@ -18,6 +18,15 @@ const ButtonLayout = styled.section`
     display: flex;
   }
 
+  @keyframes blur {
+    from {
+      filter: blur(20px);
+    }
+    to {
+      filter: blur(0px);
+    }
+  }
+
   div > button {
     padding: 5px 30px;
     color: white;
@@ -53,8 +62,11 @@ const GlobalButton = () => {
   const [buttonText, setButtonText] = useState(
     "Hello visitor! click this button please."
   );
+  const [buttonAnimation, setButtonAnimation] = useState(false);
 
   const submitClick = async () => {
+    setButtonAnimation(true);
+
     const hasClicked: boolean | null = JSON.parse(
       localStorage.getItem("hasClicked") as string
     );
@@ -105,13 +117,14 @@ const GlobalButton = () => {
     }
 
     setButtonText(`This button has been clicked ${clicks} times! globally.`);
-
     localStorage.setItem("hasClicked", JSON.stringify(true));
   };
 
   return (
     <ButtonLayout>
-      <h1>{buttonText}</h1>
+      <h1 style={buttonAnimation ? { animation: "blur 1s" } : undefined}>
+        {buttonText}
+      </h1>
       <div>
         <img src={GlobalButtonAssets.arrow} />
         <button onClick={() => submitClick()}>Button</button>
