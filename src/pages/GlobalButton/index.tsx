@@ -104,6 +104,7 @@ const GlobalButton = () => {
     }
 
     const clicks = data.clicks + 1;
+    console.log(data.clicks);
 
     // updates the button row
     const { error: updateError } = await supabase
@@ -116,6 +117,7 @@ const GlobalButton = () => {
       setButtonText("Error updating row");
     }
 
+    console.log(data.clicks);
     setButtonText(`This button has been clicked ${clicks} times! globally.`);
     localStorage.setItem("hasClicked", JSON.stringify(true));
   };
