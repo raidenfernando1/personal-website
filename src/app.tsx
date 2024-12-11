@@ -32,7 +32,7 @@ const WebsiteLayout = styled.main`
 export function App() {
   return (
     <WebsiteLayout>
-      <CustomMouse />
+      {/* <CustomMouse /> */}
       <Home />
       <GlobalButton />
       <SkillsPage />
