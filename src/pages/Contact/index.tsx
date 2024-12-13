@@ -1,64 +1,119 @@
+import React, { useCallback, useState } from "preact/compat";
 import styled from "styled-components";
 
-const ContactForm = () => {
-  const FormContainer = styled.form`
-    display: flex;
+const ContactPageContainer = styled.footer`
+  display: flex;
+  padding-block: 30px;
+  gap: 10px;
+
+  @media (max-width: 700px) {
     flex-direction: column;
-    gap: 5px;
-    font-family: inherit;
+  }
+`;
+
+const ContactsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  width: 100%;
+
+  > p {
+    margin-right: 40px;
+  }
+
+  > ul {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 1px dashed white;
+  }
+`;
+
+const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: inherit;
+  width: 100%;
+
+  > button {
+    padding: 5px 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+  }
+
+  > input {
     width: 100%;
+    outline: none;
+    padding: 5px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+  }
+`;
 
-    > button {
-      padding: 5px 10px;
-      border: 1px solid white;
-      background-color: transparent;
-      color: white;
-    }
-  `;
+const TextareaWrapper = styled.div`
+  > textarea {
+    width: 100%;
+    outline: none;
+    height: 30vh;
+    font-family: inherit;
+    padding: 5px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+  }
+`;
 
-  const Input = styled.div`
-    > input {
-      width: 100%;
-      outline: none;
-      padding: 5px;
-      border: 1px solid white;
-      background-color: transparent;
-      color: white;
-    }
-  `;
+const ContactForm = () => {
+  const handleChange = useCallback(
+    (setter: React.Dispatch<React.SetStateAction<string>>) =>
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setter((e.target as HTMLInputElement).value);
+      },
+    []
+  );
 
-  const TextareaWrapper = styled.div`
-    > textarea {
-      width: 100%;
-      outline: none;
-      height: 30vh;
-      font-family: inherit;
-      padding: 5px;
-      border: 1px solid white;
-      background-color: transparent;
-      color: white;
-    }
-  `;
+  const [messengerName, setMessengerName] = useState("");
+  const [messengerEmail, setMessengerEmail] = useState("");
+  const [messageContents, setMessageContents] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log();
+  };
 
   return (
-    <FormContainer>
-      <Input>
-        <label for="Name">Name</label>
-        <input placeholder="Name" name="Name" id="Name" />
-      </Input>
-      <Input>
-        <label for="Gmail">Gmail</label>
-        <input type="email" placeholder="Email" name="Gmail" id="Gmail" />
-      </Input>
+    <FormContainer onSubmit={handleSubmit}>
+      <label for="Name">Name</label>
+      <input
+        placeholder="Name"
+        name="Name"
+        id="Name"
+        value={messengerName}
+        onChange={handleChange(setMessengerName)}
+      />
+      <label for="Gmail">Gmail</label>
+      <input
+        type="email"
+        placeholder="Email"
+        name="Gmail"
+        id="Gmail"
+        value={messengerEmail}
+        onChange={handleChange(setMessengerEmail)}
+      />
       <TextareaWrapper>
         <label for="Message">Message Contents</label>
         <textarea
           placeholder="Message Contents"
           name="Message"
           id="Message"
+          value={messageContents}
+          onChange={handleChange(setMessageContents)}
         ></textarea>
       </TextareaWrapper>
-      <button>Submit</button>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
     </FormContainer>
   );
 };
@@ -120,33 +175,6 @@ const ContactPage = () => {
       contents: "raidenfernando1",
     },
   ];
-
-  const ContactPageContainer = styled.footer`
-    display: flex;
-    padding-block: 30px;
-    gap: 10px;
-
-    @media (max-width: 700px) {
-      flex-direction: column;
-    }
-  `;
-
-  const ContactsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-right: 40px;
-    width: 100%;
-
-    > p {
-      margin-right: 40px;
-    }
-
-    > ul {
-      margin-top: 30px;
-      padding: 15px;
-      border-top: 1px dashed white;
-    }
-  `;
 
   return (
     <>
