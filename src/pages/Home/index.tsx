@@ -2,36 +2,6 @@ import styled from "styled-components";
 import { StandardLink } from "../../components/StyledLinks";
 import Navbar from "../../components/Navbar";
 
-const BasedOn = styled.p`
-  letter-spacing: 0px;
-  font-size: 0.8rem;
-  line-height: 5;
-  cursor: default;
-  transition 1s;    
-`;
-
-const Description = styled.h1`
-  max-width: 1000px;
-  font-size: 4rem;
-  text-align: center;
-  line-height: 1;
-  cursor: default;
-`;
-
-const SubDescription = styled.h2`
-  max-width: 1000px;
-  font-size: 1rem;
-  text-align: center;
-  line-height: 2.3;
-  display: flex;
-  cursor: default;
-  gap: 3px;
-
-  @media (max-width: 1030px) {
-    font-size: 1.5rem;
-  }
-`;
-
 const HomeContents = styled.header`
   height: 75vh;
   display: flex;
@@ -42,6 +12,36 @@ const HomeContents = styled.header`
   > a {
     color: white;
     transition: 300ms;
+  }
+
+  > p {
+    letter-spacing: 0px;
+    font-size: 0.8rem;
+    line-height: 5;
+    cursor: default;
+    transition 1s;    
+  }
+
+  > p:nth-child(2) {
+    max-width: 1000px;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 1;
+    cursor: default;
+  }
+
+  > p:nth-child(3) {
+    max-width: 1000px;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 2.3;
+    display: flex;
+    cursor: default;
+    gap: 3px;
+
+    @media (max-width: 1030px) {
+      font-size: 1.5rem;
+    } 
   }
 
   > a:hover {
@@ -58,16 +58,14 @@ const Home = () => {
     <>
       <Navbar />
       <HomeContents>
-        <BasedOn>BASED IN PHILIPPINES / RIZAL</BasedOn>
-        <Description>
-          Software Engineer | Focused on Building Websites and Web Apps{" "}
-        </Description>
-        <SubDescription>
+        <p>BASED IN PHILIPPINES / RIZAL</p>
+        <p>Software Engineer | Focused on Building Websites and Web Apps </p>
+        <p>
           Hi, I'm Raiden, I make websites
           <StandardLink ariaLabel="Download my CV" navigate="/">
             Download my CV
           </StandardLink>
-        </SubDescription>
+        </p>
       </HomeContents>
     </>
   );
