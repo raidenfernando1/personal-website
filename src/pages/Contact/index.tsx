@@ -35,13 +35,6 @@ const FormContainer = styled.form`
   font-family: inherit;
   width: 100%;
 
-  > button {
-    padding: 5px 10px;
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-  }
-
   > input {
     width: 100%;
     outline: none;
@@ -49,6 +42,19 @@ const FormContainer = styled.form`
     border: 1px solid white;
     background-color: transparent;
     color: white;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  > button {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
   }
 `;
 
@@ -112,8 +118,10 @@ const ContactForm = () => {
           onChange={handleChange(setMessageContents)}
         ></textarea>
       </TextareaWrapper>
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
+      <ButtonContainer>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </ButtonContainer>
     </FormContainer>
   );
 };
