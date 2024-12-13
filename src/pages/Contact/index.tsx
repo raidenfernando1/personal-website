@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "preact/compat";
 import styled from "styled-components";
+import { supabase } from "../../supabase";
 
 const ContactPageContainer = styled.footer`
   display: flex;
@@ -34,7 +35,6 @@ const FormContainer = styled.form`
   gap: 5px;
   font-family: inherit;
   width: 100%;
-
   > input {
     width: 100%;
     outline: none;
@@ -68,6 +68,22 @@ const TextareaWrapper = styled.div`
     border: 1px solid white;
     background-color: transparent;
     color: white;
+    min-height: 300px;
+    resize: vertical;
+  }
+`;
+
+const ErrorMessage = styled.p`
+  border-bottom: 1px solid white;
+  animation: blur 300ms ease forwards;
+
+  @keyframes blur {
+    from {
+      filter: blur(20px);
+    }
+    to {
+      filter: blur(0px);
+    }
   }
 `;
 
@@ -83,46 +99,82 @@ const ContactForm = () => {
   const [messengerName, setMessengerName] = useState("");
   const [messengerEmail, setMessengerEmail] = useState("");
   const [messageContents, setMessageContents] = useState("");
+  const [messageStatus, setMessageStatus] = useState("");
+  const [debounce, setDebounce] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log();
+
+    if (debounce) {
+      setMessageStatus("Wait for 5 seconds to send another message");
+      return;
+    }
+
+    const message = {
+      sender_name: messengerName,
+      message_contents: messageContents,
+      sender_email: messengerEmail,
+    };
+
+    try {
+      const { error } = await supabase
+        .from("messages")
+        .insert([message])
+        .select();
+      error
+        ? setMessageStatus("Error sending message..")
+        : setMessageStatus("Message sent thanks :)");
+
+      setDebounce(true);
+      setTimeout(() => {
+        setMessageStatus("");
+        setDebounce(false);
+      }, 5000);
+    } catch (err) {
+      setMessageStatus("Error sending message..");
+      setTimeout(() => {
+        setDebounce(true);
+      }, 5000);
+    }
   };
 
   return (
-    <FormContainer onSubmit={handleSubmit}>
-      <label for="Name">Name</label>
-      <input
-        placeholder="Name"
-        name="Name"
-        id="Name"
-        value={messengerName}
-        onChange={handleChange(setMessengerName)}
-      />
-      <label for="Gmail">Gmail</label>
-      <input
-        type="email"
-        placeholder="Email"
-        name="Gmail"
-        id="Gmail"
-        value={messengerEmail}
-        onChange={handleChange(setMessengerEmail)}
-      />
-      <TextareaWrapper>
-        <label for="Message">Message Contents</label>
-        <textarea
-          placeholder="Message Contents"
-          name="Message"
-          id="Message"
-          value={messageContents}
-          onChange={handleChange(setMessageContents)}
-        ></textarea>
-      </TextareaWrapper>
-      <ButtonContainer>
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-      </ButtonContainer>
-    </FormContainer>
+    <>
+      <FormContainer onSubmit={handleSubmit}>
+        <ErrorMessage key={messageStatus}>{messageStatus}</ErrorMessage>
+        <label for="Name">Name</label>
+        <input
+          placeholder="Name"
+          name="Name"
+          id="Name"
+          value={messengerName}
+          onChange={handleChange(setMessengerName)}
+        />
+        <label for="Gmail">Email</label>
+        <input
+          type="email"
+          placeholder="Email"
+          name="Gmail"
+          id="Gmail"
+          value={messengerEmail}
+          onChange={handleChange(setMessengerEmail)}
+        />
+        <TextareaWrapper>
+          <label for="Message">Message Contents</label>
+          <textarea
+            placeholder="Message Contents"
+            name="Message"
+            id="Message"
+            value={messageContents}
+            onChange={handleChange(setMessageContents)}
+          ></textarea>
+        </TextareaWrapper>
+        <ButtonContainer>
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </ButtonContainer>
+      </FormContainer>
+    </>
   );
 };
 
