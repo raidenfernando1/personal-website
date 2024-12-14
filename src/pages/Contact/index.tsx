@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from "preact/compat";
 import styled from "styled-components";
+import PageLayout from "../../components/PageLayout";
 import { supabase } from "../../supabase";
 
 const ContactPageContainer = styled.footer`
   display: flex;
-  padding-block: 30px;
-  gap: 10px;
+  margin-top: 40px;
 
   @media (max-width: 700px) {
     flex-direction: column;
@@ -15,7 +15,7 @@ const ContactPageContainer = styled.footer`
 const ContactsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 40px;
+  margin-right: 50px;
   width: 100%;
 
   > p {
@@ -36,7 +36,6 @@ const FormContainer = styled.form`
   font-family: inherit;
   width: 100%;
   > input {
-    width: 100%;
     outline: none;
     padding: 5px;
     border: 1px solid white;
@@ -68,7 +67,7 @@ const TextareaWrapper = styled.div`
     border: 1px solid white;
     background-color: transparent;
     color: white;
-    min-height: 300px;
+    min-height: 200px;
     resize: vertical;
   }
 `;
@@ -106,7 +105,14 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (debounce) {
-      setMessageStatus("Wait for 5 seconds to send another message");
+      return setMessageStatus("Wait for 5 seconds to send another message");
+    }
+
+    if (messageContents.length < 5) {
+      setMessageStatus("Message content must be at least 5 characters.");
+      setTimeout(() => {
+        setMessageStatus("");
+      }, 5000);
       return;
     }
 
@@ -139,49 +145,45 @@ const ContactForm = () => {
   };
 
   return (
-    <>
-      <FormContainer onSubmit={handleSubmit}>
-        <ErrorMessage key={messageStatus}>{messageStatus}</ErrorMessage>
-        <label for="Name">Name</label>
-        <input
-          placeholder="Name"
-          name="Name"
-          id="Name"
-          value={messengerName}
-          onChange={handleChange(setMessengerName)}
-        />
-        <label for="Gmail">Email</label>
-        <input
-          type="email"
-          placeholder="Email"
-          name="Gmail"
-          id="Gmail"
-          value={messengerEmail}
-          onChange={handleChange(setMessengerEmail)}
-        />
-        <TextareaWrapper>
-          <label for="Message">Message Contents</label>
-          <textarea
-            placeholder="Message Contents"
-            name="Message"
-            id="Message"
-            value={messageContents}
-            onChange={handleChange(setMessageContents)}
-          ></textarea>
-        </TextareaWrapper>
-        <ButtonContainer>
-          <button type="submit">Submit</button>
-          <button type="reset">Reset</button>
-        </ButtonContainer>
-      </FormContainer>
-    </>
+    <FormContainer onSubmit={handleSubmit}>
+      <ErrorMessage key={messageStatus}>{messageStatus}</ErrorMessage>
+      <label for="Name">Name</label>
+      <input
+        placeholder="Name"
+        name="Name"
+        id="Name"
+        value={messengerName}
+        onChange={handleChange(setMessengerName)}
+      />
+      <label for="Gmail">Email</label>
+      <input
+        type="email"
+        placeholder="Email"
+        name="Gmail"
+        id="Gmail"
+        value={messengerEmail}
+        onChange={handleChange(setMessengerEmail)}
+      />
+      <TextareaWrapper>
+        <label for="Message">Message Contents</label>
+        <textarea
+          placeholder="Message Contents"
+          name="Message"
+          id="Message"
+          value={messageContents}
+          onChange={handleChange(setMessageContents)}
+        ></textarea>
+      </TextareaWrapper>
+      <ButtonContainer>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </ButtonContainer>
+    </FormContainer>
   );
 };
 
-interface ContactLinkProps {
-  type: string;
-  platform: string;
-  href: string;
+interface ContactLinkProps
+  extends Record<"type" | "platform" | "href", string> {
   children: React.ReactNode;
 }
 
@@ -191,21 +193,17 @@ const ContactLink = ({ type, platform, href, children }: ContactLinkProps) => {
     gap: 5px;
   `;
 
-  if (type === "gmail") {
-    return (
-      <ContactLinkContainer>
-        <p>{platform}:</p>
-        <a href={`mailto:${href}`}>{children}</a>
-      </ContactLinkContainer>
-    );
-  } else {
-    return (
-      <ContactLinkContainer>
-        <p>{platform}:</p>
-        <a href={href}>{children}</a>
-      </ContactLinkContainer>
-    );
-  }
+  return type === "gmail" ? (
+    <ContactLinkContainer>
+      <p>{platform}:</p>
+      <a href={`mailto:${href}`}>{children}</a>
+    </ContactLinkContainer>
+  ) : (
+    <ContactLinkContainer>
+      <p>{platform}:</p>
+      <a href={`mailto:${href}`}>{children}</a>
+    </ContactLinkContainer>
+  );
 };
 
 const ContactPage = () => {
@@ -237,7 +235,7 @@ const ContactPage = () => {
   ];
 
   return (
-    <>
+    <PageLayout paddingBlock="100px">
       <h1>Get in touch?</h1>
       <ContactPageContainer>
         <ContactsContainer>
@@ -262,7 +260,7 @@ const ContactPage = () => {
         </ContactsContainer>
         <ContactForm />
       </ContactPageContainer>
-    </>
+    </PageLayout>
   );
 };
 

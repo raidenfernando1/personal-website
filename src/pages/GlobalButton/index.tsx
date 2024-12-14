@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import GlobalButtonAssets from "../../assets/GlobalButtonAssets";
+import PageLayout from "../../components/PageLayout";
 import { supabase } from "../../supabase";
 import { useState } from "preact/hooks";
 
-const ButtonLayout = styled.section`
-  padding-block: 120px;
+const ButtonLayout = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,7 +54,7 @@ const ButtonLayout = styled.section`
 
     @media (max-width: 1000px) {
       width: 40px;
-      heigh: 40px;
+      height: 40px;
     }
   }
 `;
@@ -123,15 +124,17 @@ const GlobalButton = () => {
   };
 
   return (
-    <ButtonLayout>
-      <h1 style={buttonAnimation ? { animation: "blur 1s" } : undefined}>
-        {buttonText}
-      </h1>
-      <div>
-        <img src={GlobalButtonAssets.arrow} />
-        <button onClick={() => submitClick()}>Button</button>
-      </div>
-    </ButtonLayout>
+    <PageLayout paddingBlock="120px">
+      <ButtonLayout>
+        <h1 style={buttonAnimation ? { animation: "blur 1s" } : undefined}>
+          {buttonText}
+        </h1>
+        <div>
+          <img src={GlobalButtonAssets.arrow} />
+          <button onClick={() => submitClick()}>Button</button>
+        </div>
+      </ButtonLayout>
+    </PageLayout>
   );
 };
 
