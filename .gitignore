@@ -24,5 +24,8 @@ dist-ssr
 *.sw?
 
 .env
+<<<<<<< HEAD
+=======
 
+>>>>>>> 970585d6c4142c82bcf788ba0569223950dac98f
 TODO.md

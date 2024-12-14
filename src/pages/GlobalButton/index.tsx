@@ -68,29 +68,6 @@ const GlobalButton = () => {
   const submitClick = async () => {
     setButtonAnimation(true);
 
-    const hasClicked: boolean | null = JSON.parse(
-      localStorage.getItem("hasClicked") as string
-    );
-
-    if (hasClicked) {
-      const { data, error: fetchError } = await supabase
-        .from("button_clicks")
-        .select("clicks")
-        .eq("id", import.meta.env.VITE_BUTTON_ROW_ID)
-        .single(); // expects this request to only return a single row
-
-      if (fetchError) {
-        console.error("Error: " + data);
-        setButtonText("Error selecting row.");
-        return;
-      }
-
-      setButtonText(
-        `You have already clicked this button. This button has been clicked ${data.clicks} times!`
-      );
-      return;
-    }
-
     // selects button click row
     const { data, error: fetchError } = await supabase
       .from("button_clicks")
@@ -105,7 +82,6 @@ const GlobalButton = () => {
     }
 
     const clicks = data.clicks + 1;
-    console.log(data.clicks);
 
     // updates the button row
     const { error: updateError } = await supabase
@@ -118,9 +94,7 @@ const GlobalButton = () => {
       setButtonText("Error updating row");
     }
 
-    console.log(data.clicks);
     setButtonText(`This button has been clicked ${clicks} times! globally.`);
-    localStorage.setItem("hasClicked", JSON.stringify(true));
   };
 
   return (

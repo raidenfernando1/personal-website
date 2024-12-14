@@ -6,6 +6,7 @@ import SkillsPage from "./pages/Skills";
 import ProjectsPage from "./pages/Projects";
 import ContactPage from "./pages/Contact";
 import styled from "styled-components";
+import { Analytics } from "@vercel/analytics/react";
 
 const WebsiteLayout = styled.main`
   margin-inline: 210px;
@@ -31,13 +32,17 @@ const WebsiteLayout = styled.main`
 
 export function App() {
   return (
-    <WebsiteLayout>
-      <Home />
-      <GlobalButton />
-      <SkillsPage />
-      <ProjectsPage />
-      <ContactPage />
-    </WebsiteLayout>
+    <>
+      <Analytics />
+      <WebsiteLayout>
+        <CustomMouse />
+        <Home />
+        <GlobalButton />
+        <SkillsPage />
+        <ProjectsPage />
+        <ContactPage />
+      </WebsiteLayout>
+    </>
   );
 }
 
