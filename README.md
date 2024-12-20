@@ -16,7 +16,9 @@ Step 2: Set Up Environment Variables
 You will need to create a .env file and provide the following variables:
 
 VITE_SUPABASE_URL
+
 VITE_SUPABASE_KEY
+
 VITE_BUTTON_ROW_ID
 
     VITE_BUTTON_ROW_ID: This refers to a row in Supabase containing an int8 number. This row is used by the GlobalButton component.
