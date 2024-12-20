@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "preact/compat";
 import styled from "styled-components";
 import PageLayout from "../../components/PageLayout";
 import { supabase } from "../../supabase";
+import ContactAssets from "../../assets/ContactAssets";
 
 const ContactPageContainer = styled.footer`
   display: flex;
@@ -15,6 +16,7 @@ const ContactPageContainer = styled.footer`
 const ContactsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-right: 50px;
   width: 100%;
 
@@ -26,6 +28,21 @@ const ContactsContainer = styled.div`
     margin-top: 30px;
     padding: 15px;
     border-top: 1px dashed white;
+  }
+`;
+
+const BuiltContainer = styled.div`
+  display: flex;
+  padding-block: 5px;
+  gap: 5px;
+  color: rgb(100, 100, 100);
+
+  > p {
+    font-size: 1rem;
+  }
+
+  > img {
+    width: 20px;
   }
 `;
 
@@ -201,7 +218,7 @@ const ContactLink = ({ type, platform, href, children }: ContactLinkProps) => {
   ) : (
     <ContactLinkContainer>
       <p>{platform}:</p>
-      <a href={`mailto:${href}`}>{children}</a>
+      <a href={href}>{children}</a>
     </ContactLinkContainer>
   );
 };
@@ -257,6 +274,12 @@ const ContactPage = () => {
               </li>
             ))}
           </ul>
+          <BuiltContainer>
+            <p>This website is built using: </p>
+            <img src={ContactAssets.react} alt="react" />
+            <p>+</p>
+            <img src={ContactAssets.supabase} alt="supabase" />
+          </BuiltContainer>
         </ContactsContainer>
         <ContactForm />
       </ContactPageContainer>

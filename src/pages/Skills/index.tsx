@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import SkillsCard from "../../components/SkillsCard";
 import SkillsPageAssets from "../../assets/SkillsPageAssets";
+import PageLayout from "../../components/PageLayout";
 
 const SkillsContainer = styled.div`
   padding-block: 30px;
@@ -11,10 +12,6 @@ const SkillsContainer = styled.div`
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
   }
-`;
-
-const SkillsWrapper = styled.section`
-  padding-block: 50px;
 `;
 
 const SkillsPage = () => {
@@ -58,14 +55,14 @@ const SkillsPage = () => {
   ];
 
   return (
-    <SkillsWrapper>
+    <PageLayout paddingBlock="50px">
       <h1>My tech stack</h1>
       <SkillsContainer>
         {skills.map((skills) => (
           <SkillsCard imagePath={skills.image}>{skills.name}</SkillsCard>
         ))}
       </SkillsContainer>
-    </SkillsWrapper>
+    </PageLayout>
   );
 };
 

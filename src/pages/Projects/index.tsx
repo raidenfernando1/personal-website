@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import ProjectsCard from "../../components/ProjectsCard";
 import ProjectsAssets from "../../assets/ProjectsAssets";
-
-const Projects = styled.section`
-  padding-block: 50px;
-`;
+import PageLayout from "../../components/PageLayout";
+import { FC } from "preact/compat";
 
 const ProjectsContainer = styled.div`
   display: grid;
@@ -21,7 +19,7 @@ const ProjectsContainer = styled.div`
   }
 `;
 
-const ProjectsPage = () => {
+const ProjectsPage: FC = () => {
   const ProjectsList = [
     {
       logo: ProjectsAssets.notey,
@@ -37,7 +35,7 @@ const ProjectsPage = () => {
   ];
 
   return (
-    <Projects>
+    <PageLayout paddingBlock="100px">
       <h1>Some of my projects</h1>
       <ProjectsContainer>
         {ProjectsList.map((projects) => (
@@ -48,7 +46,7 @@ const ProjectsPage = () => {
           />
         ))}
       </ProjectsContainer>
-    </Projects>
+    </PageLayout>
   );
 };
 
