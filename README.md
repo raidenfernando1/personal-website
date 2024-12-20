@@ -5,10 +5,8 @@ Step 1: Install Dependencies
 
 You can install dependencies using either npm or Bun:
 
-# Using npm
 npm install 
-
-# Using Bun (optional)
+# or
 bun install 
 
 Step 2: Set Up Environment Variables
@@ -27,10 +25,8 @@ Step 3: Run the Development Server
 
 After setting up the .env file, run the development server:
 
-# Using npm
 npm run dev 
-
-# Using Bun (optional)
+# or
 bun run dev
 
 The website should now be running locally!
