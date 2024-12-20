@@ -1,13 +1,13 @@
-Getting Started
-
 This project is built using TypeScript, Preact, and Supabase. BunJS is used as the package manager, but npm is also supported.
 Step 1: Install Dependencies
 
 You can install dependencies using either npm or Bun:
 
-npm install 
+```bash
+npm install
 # or
-bun install 
+bun install
+```
 
 Step 2: Set Up Environment Variables
 
@@ -25,9 +25,11 @@ Step 3: Run the Development Server
 
 After setting up the .env file, run the development server:
 
-npm run dev 
+```bash
+npm run dev
 # or
 bun run dev
+```
 
 The website should now be running locally!
 Notes:
