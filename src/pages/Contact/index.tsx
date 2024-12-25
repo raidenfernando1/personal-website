@@ -34,6 +34,7 @@ const ContactsContainer = styled.div`
 const BuiltContainer = styled.div`
   display: flex;
   padding-block: 5px;
+  align-items: center;
   gap: 5px;
   color: rgb(100, 100, 100);
 
