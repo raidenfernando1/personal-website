@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Home from "./Home";
+import ErrorPage from "./404";
 import Navbar from "../components/Navbar";
 import { Route, Switch } from "wouter";
 
@@ -8,9 +9,13 @@ const Layout = styled.main`
   flex-direction: column;
   margin-inline: 22%;
   height: 100vh;
+
+  @media (max-width: 768px) {
+    margin-inline: 5%;
+  }
 `;
 
-const Page = styled.div`
+const Pages = styled.div`
   height: 100%;
 `;
 
@@ -18,12 +23,12 @@ const App = () => {
   return (
     <Layout>
       <Navbar />
-      <Page>
+      <Pages>
         <Switch>
           <Route path="/" component={Home} />
-          <Route path="/*" component={Home} />
+          <Route path="/*" component={ErrorPage} />
         </Switch>
-      </Page>
+      </Pages>
     </Layout>
   );
 };

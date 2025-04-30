@@ -6,9 +6,15 @@ const Container = styled.nav`
   justify-content: space-between;
   padding-block: 30px;
 `;
+
 const Links = styled.div`
   display: flex;
   gap: 50px;
+
+  @media (max-width: 768px) {
+    gap: 30px;
+    flex-direction: column;
+  }
 `;
 
 const Navbar = () => {
@@ -16,7 +22,6 @@ const Navbar = () => {
     <Container>
       <Link to="/">Raiden Fernando</Link>
       <Links>
-        <Link to="/contact">Tech Stack</Link>
         <Link to="/projects">Projects</Link>
         <Link to="/contact">Contact</Link>
       </Links>
