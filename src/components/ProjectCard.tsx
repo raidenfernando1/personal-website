@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import PlaceholderImage from "../../public/no-image.svg?react";
 
 const Container = styled.a`
   width: 100%;
+  height: 100%;
   max-width: 320px;
   display: flex;
   flex-direction: column;
@@ -39,14 +41,35 @@ const Title = styled.h1`
   margin: 0.75rem 0 0.25rem;
 `;
 
-const ProjectCard = () => {
+type Project = {
+  title: string;
+  description: string;
+  imagePath?: string;
+  imageAlt?: string;
+  link?: string;
+};
+
+const ProjectCard = ({
+  title,
+  description,
+  imagePath,
+  imageAlt,
+  link,
+}: Project) => {
   return (
-    <Container href="#">
+    <Container href={link}>
       <ImageWrapper>
-        <img src="/your-image.jpg" alt="Project preview" />
+        {imagePath ? (
+          <img
+            src={imagePath}
+            alt={imagePath ? imageAlt : "Placeholder Image"}
+          />
+        ) : (
+          <PlaceholderImage />
+        )}
       </ImageWrapper>
-      <Title>Arachnid - AI Powered Kiosk</Title>
-      <p>Easy and efficient way to gather information for end users</p>
+      <Title>{title}</Title>
+      <p>{description}</p>
     </Container>
   );
 };

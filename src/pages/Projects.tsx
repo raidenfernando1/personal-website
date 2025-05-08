@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import ProjectCard from "../components/ProjectCard";
+import { projectList } from "../helper/Projects";
 
-const Container = styled.main``;
+const Container = styled.main`
+  padding-bottom: 30px;
+`;
 
 const Introduction = styled.div`
   display: flex;
@@ -13,11 +16,17 @@ const Title = styled.h1`
   margin-bottom: 30px;
 `;
 
-const ProjectsContainer = styled.div`
+const ProjectsContainer = styled.ul`
+  height: 100%;
+
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+
+  > li {
+    list-style: none;
+  }
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -27,6 +36,7 @@ const ProjectsContainer = styled.div`
     grid-template-columns: 1fr;
   }
 `;
+
 const Projects = () => {
   return (
     <Container>
@@ -44,10 +54,17 @@ const Projects = () => {
         </p>
       </Introduction>
       <ProjectsContainer>
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {projectList.map((data, index) => {
+          return (
+            <li key={index}>
+              <ProjectCard
+                link={data.link}
+                title={data.title}
+                description={data.description}
+              />
+            </li>
+          );
+        })}
       </ProjectsContainer>
     </Container>
   );
