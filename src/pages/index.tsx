@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Home from "./Home";
 import ErrorPage from "./404";
+import Projects from "./Projects";
 import Navbar from "../components/Navbar";
 import { Route, Switch } from "wouter";
 
@@ -26,6 +27,7 @@ const App = () => {
       <Pages>
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/projects" component={Projects} />
           <Route path="/*" component={ErrorPage} />
         </Switch>
       </Pages>

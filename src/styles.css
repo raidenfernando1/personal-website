@@ -1,6 +1,7 @@
 :root {
   --background-color: rgb(25, 25, 25);
   --text-color: rgb(180, 180, 180);
+  --bd-color: rgb(180, 180, 180);
 }
 
 body {
