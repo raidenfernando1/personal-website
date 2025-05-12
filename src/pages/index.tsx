@@ -4,6 +4,7 @@ import ErrorPage from "./404";
 import Projects from "./Projects";
 import Navbar from "../components/Navbar";
 import { Route, Switch } from "wouter";
+import Contact from "./Contact";
 
 const Layout = styled.main`
   display: flex;
@@ -28,6 +29,7 @@ const App = () => {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/projects" component={Projects} />
+          <Route path="/contact" component={Contact} />
           <Route path="/*" component={ErrorPage} />
         </Switch>
       </Pages>
