@@ -1,7 +1,6 @@
 import Home from "./Home";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import CheckBoxes from "./CheckBoxes";
 
 const App = () => {
   return (
@@ -9,7 +8,6 @@ const App = () => {
       <div className="h-full">
         <Home />
         <Projects />
-        <CheckBoxes />
         <Contact />
       </div>
     </main>

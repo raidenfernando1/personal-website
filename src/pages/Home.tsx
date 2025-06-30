@@ -7,10 +7,6 @@ const Home = () => {
           Fullstack Developer
           <span className="block">Based in Philippines ~ Rizal</span>
         </p>
-        <div>
-          <p>Resume</p>
-          <p>raidenfernando2@gmail.com</p>
-        </div>
       </main>
     </>
   );
