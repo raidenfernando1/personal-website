@@ -14,10 +14,6 @@ const CTA = styled.ul`
   flex-direction: column;
   gap: 5px;
 
-  > li {
-    margin-left: 30px;
-  }
-
   > li a {
     text-decoration: underline;
   }

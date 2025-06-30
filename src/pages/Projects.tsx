@@ -12,10 +12,6 @@ const Introduction = styled.div`
   gap: 20px;
 `;
 
-const Title = styled.h1`
-  margin-bottom: 30px;
-`;
-
 const ProjectsContainer = styled.ul`
   height: 100%;
 
@@ -41,16 +37,16 @@ const Projects = () => {
   return (
     <Container>
       <Introduction>
-        <Title>Projects</Title>
+        <h1 className="text-2xl">Selected Works</h1>
         <p>
           As a developer I run into problems every day. Whenever possible, I try
           to publish my solutions as open source software so others can benefit
           and build upon them.
         </p>
         <p>
-          Some projects are simple PHP packages, others are full blown web
-          applications or SaaS products and others are shell scripts to automate
-          tedious "borings" tasks.
+          Some projects are NPM packages or CLI applications, others are full
+          blown web applications or SaaS products and others are shell scripts
+          to automate tedious "borings" tasks.
         </p>
       </Introduction>
       <ProjectsContainer>

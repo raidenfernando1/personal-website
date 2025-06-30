@@ -10,13 +10,7 @@ const Container = styled.a`
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease;
-  padding: 20px;
-  border: 1px dashed var(--bd-color);
   transition: 300ms;
-
-  &:hover {
-    border: 1px solid var(--bd-color);
-  }
 
   @media (max-width: 768px) {
     max-width: 100%;

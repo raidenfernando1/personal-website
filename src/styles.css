@@ -1,27 +1,23 @@
+@import "tailwindcss";
+
 :root {
   --background-color: rgb(25, 25, 25);
   --text-color: rgb(180, 180, 180);
   --bd-color: rgb(180, 180, 180);
 }
 
+html,
 body {
   background-color: var(--background-color);
 }
 
 * {
   color: var(--text-color);
-  letter-spacing: 0.7px;
   font-family: "Lora", serif;
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-h1 {
-  font-size: inherit;
 }
