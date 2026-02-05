@@ -1,32 +1,28 @@
 import "../../style/components.style.css";
 
+import type { PROJECT_OBJECT_TYPE } from "../../data/projects";
+
 const ProjectCard = ({
-  title,
-  description,
-  project_type,
-  website,
-  github,
-}: {
-  title: string;
-  description: string;
-  project_type: string;
-  website: string | null;
-  github: string | null;
-}) => {
+  projectName,
+  projectDescription,
+  projectType,
+  githubLink,
+  websiteLink,
+}: PROJECT_OBJECT_TYPE) => {
   return (
     <div class="project-card-component-container">
       <div class="project-card-component-wrapper">
         <div class="project-card-component-title-container">
-          <p class="title-text-bold">{title}</p>
-          <p class="subtitle-text">{project_type}</p>
+          <p class="title-text-bold">{projectName}</p>
+          <p class="subtitle-text">{projectDescription}</p>
         </div>
-        <p class="project-card-component-description">{description}</p>
+        <p class="project-card-component-description">{projectType}</p>
         <div class="project-card-component-cte">
-          <a href={website ? "#" : undefined}>
-            Website: {website ? `${website}` : "Not available"}
+          <a href={websiteLink ? "#" : undefined}>
+            Website: {websiteLink ? `${websiteLink}` : "Not available"}
           </a>
-          <a href={github ? "#" : undefined}>
-            Github: {github ? `${github}` : "Not available"}
+          <a href={githubLink ? "#" : undefined}>
+            Github: {githubLink ? `${githubLink}` : "Not available"}
           </a>
         </div>
       </div>

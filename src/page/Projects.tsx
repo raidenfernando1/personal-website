@@ -20,11 +20,11 @@ const Projects = () => {
         {projectList.map((data) => {
           return (
             <ProjectCard
-              title={data.projectName}
-              description={data.projectDescription}
-              project_type={data.projectType}
-              github={data.githubLink}
-              website={data.websiteLink}
+              projectName={data.projectName}
+              projectDescription={data.projectDescription}
+              projectType={data.projectType}
+              githubLink={data.githubLink}
+              websiteLink={data.websiteLink}
             />
           );
         })}
