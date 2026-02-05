@@ -1,0 +1,132 @@
+/*
+Responsive Breakpoints
+1: 768
+2: 548
+*/
+
+.hero-container {
+  padding: 3rem;
+  background-color: var(--primary-color);
+}
+
+.hero-content-1 {
+  font-size: 1rem;
+}
+
+.hero-region-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  > .hero-region {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+
+    > svg {
+      width: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-region-wrapper {
+    padding-bottom: 1rem;
+  }
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-name-ascii {
+  font-size: clamp(0.3rem, 1.35vw, 1.25rem);
+  font-weight: bolder;
+  font-family: monospace;
+  line-height: 1;
+  white-space: pre;
+}
+
+.hero-content-socials-container {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.hero-content-socials-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  li {
+    list-style: none;
+  }
+
+  li > div {
+    display: flex;
+    align-items: center;
+  }
+
+  li > div > a {
+    display: flex;
+    color: inherit;
+    gap: 0.25rem;
+    text-decoration: none;
+    transition: 30ms;
+  }
+
+  li > div > a:hover {
+    color: var(--primary-highlight-color);
+  }
+}
+
+.hero-content-socials-btn {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 1.25rem;
+  }
+
+  .hero-content-socials-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+
+    li > div > a {
+      padding: 1rem;
+      border: 1px solid var(--secondary-color);
+      border-radius: 4px;
+    }
+  }
+}
+
+/* Projects styles */
+
+.projects-container {
+  height: 100dvh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.projects-list-masonry-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.projects-list-masonry-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 1.25rem;
+  }
+}

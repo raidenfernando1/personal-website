@@ -1,0 +1,45 @@
+:root {
+  --primary-color: #282828;
+  --secondary-color: #ebdbb2;
+  --primary-highlight-color: #fb4934;
+  --secondary-highlight-color: #fabd2f;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Geist Mono";
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  font-size: clamp(0.9rem, 1.2vw, 2rem);
+}
+
+.title-text-bold {
+  font-weight: bolder;
+  font-size: 1.25rem;
+}
+
+.subtitle-text {
+  opacity: 0.2;
+  font-size: 0.825rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Highlights */
+
+/* For most browsers */
+::selection {
+  background-color: var(--primary-highlight-color);
+  color: var(--primary-color);
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: var(--primary-highlight-color);
+  color: var(--primary-color);
+}

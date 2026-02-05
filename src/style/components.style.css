@@ -1,0 +1,38 @@
+.project-card-component-container {
+  display: flex;
+  padding: 1.25rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  opacity: 0.2;
+  transition: 50ms;
+}
+
+.project-card-component-container:hover {
+  opacity: 1;
+}
+
+.project-card-component-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.project-card-component-description {
+  font-size: 1rem;
+}
+
+.project-card-component-cte {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 0.825rem;
+
+  > a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  > a:hover {
+    color: var(--primary-highlight-color);
+  }
+}
